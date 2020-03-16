@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Table from './Components/Table'
 
 function App() {
   return (
     <div className="App">
-      
+        <Table />
     </div>
   );
 }

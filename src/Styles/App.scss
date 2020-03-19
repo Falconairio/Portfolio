@@ -1,0 +1,31 @@
+@import './resets';
+
+.App {
+  width: 100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+.placeholder {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10vw;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@import './table';
+
+@import './license';
+
+@import './pre-contactbox';

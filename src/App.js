@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './Styles/App.css';
 import ContactBox from './Components/ContactBox';
 
 function App() {

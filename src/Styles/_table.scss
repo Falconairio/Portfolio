@@ -1,0 +1,66 @@
+$woodcolor: rgb(51, 36, 5);
+$woodcolor2: rgb(74, 53, 10);
+
+$woodcolors: (
+  "colorOne": rgb(51, 36, 5),
+  "colorTwo": rgb(74, 53, 10)
+);
+
+.table-container {
+    display:flex;
+    flex-direction: column; 
+    margin-top: 71px;
+    z-index: -1;
+    position: absolute;
+  }
+  
+  .table-base-container {
+    width: 70vw;
+    height: 57vh;
+    background-image: linear-gradient($woodcolor, $woodcolor2);
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .triangle-spacer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 53vh 140px 0 0;
+    border-color: black transparent transparent transparent;
+  }
+  
+  .triangle2 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 140px 53vh 0;
+    border-color: transparent black transparent transparent;
+  }
+  
+  .table-line {
+    width: 70vw;
+    height: 4px;
+    background-color: black;
+  }
+  
+  .table-legs {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .table-leg {
+    background-image: linear-gradient($woodcolor2,$woodcolor);
+    width: 22px;
+    height: 240px;
+  }
+  
+  #leg1 {
+    background-image: linear-gradient($woodcolor2, $woodcolor);
+  }

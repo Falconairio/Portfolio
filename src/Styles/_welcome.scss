@@ -1,9 +1,8 @@
 .welcome-container {
-    // @include whiteborder;
+    @include whiteborder;
     @include flexcenterabsolute;
     @include flexcolumn;
     @include portfolioitemspacing;
-    height: 70vh;
     color: white;
     h1 {
         font-size: 7vw;

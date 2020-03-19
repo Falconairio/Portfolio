@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from "react-scroll";
 
 export default class SideNavbar extends Component {
 
-    scroll = () => {
-        window.scrollBy(0,50)
-    }
 
     render() {
         return (
@@ -21,10 +19,42 @@ export default class SideNavbar extends Component {
                     <div className = 'navigation-options'>
                     <hr/>
                         <ul>
-                            <li>About</li>
-                            <li>Projects</li>
-                            <li>Jobs</li>
-                            <li>Contact</li>
+                        <Link 
+                            className="navLink"
+                            activeClass="active"
+                            to="about"
+                            spy={true}
+                            smooth={true}
+                            offset={-105}
+                            duration= {400}
+                        >About</Link>
+                        <Link 
+                            className="navLink"
+                            activeClass="active"
+                            to="projects"
+                            spy={true}
+                            smooth={true}
+                            offset={-105}
+                            duration= {400}
+                        >Projects</Link>
+                        <Link 
+                            className="navLink"
+                            activeClass="active"
+                            to="jobs"
+                            spy={true}
+                            smooth={true}
+                            offset={-105}
+                            duration= {400}
+                        >Jobs</Link>
+                        <Link 
+                            className="navLink"
+                            activeClass="active"
+                            to="contact"
+                            spy={true}
+                            smooth={true}
+                            offset={-105}
+                            duration= {400}
+                        >Contact</Link>
                         </ul>
                     </div>
                 </div>

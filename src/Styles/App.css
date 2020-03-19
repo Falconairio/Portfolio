@@ -48,6 +48,16 @@ table {
   border-spacing: 0;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.example {
+  -ms-overflow-style: none;
+}
+
 @-webkit-keyframes aboutbox {
   0% {
     margin-top: 200px;
@@ -138,107 +148,8 @@ body {
           flex-direction: column;
 }
 
-.table-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 71px;
-  z-index: -1;
-  position: absolute;
-}
-
-.table-base-container {
-  width: 70vw;
-  height: 57vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#332405), to(#4a350a));
-  background-image: linear-gradient(#332405, #4a350a);
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.triangle-spacer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 53vh 140px 0 0;
-  border-color: black transparent transparent transparent;
-}
-
-.triangle2 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 140px 53vh 0;
-  border-color: transparent black transparent transparent;
-}
-
-.table-line {
-  width: 70vw;
-  height: 4px;
-  background-color: black;
-}
-
-.table-legs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.table-leg {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a350a), to(#332405));
-  background-image: linear-gradient(#4a350a, #332405);
-  width: 22px;
-  height: 240px;
-}
-
-#leg1 {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a350a), to(#332405));
-  background-image: linear-gradient(#4a350a, #332405);
-}
-
-.license-container {
-  background-color: #e2e1a6;
-  width: 375px;
-  height: 235px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-self: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  border-radius: 10px;
-  padding: 10px 10px 10px 10px;
-}
-
-.license-container h1 {
-  font-family: sans-serif;
-}
-
-.learner-symbol {
-  width: 45px;
-  height: 45px;
+button {
+  color: white;
 }
 
 .contact-box-container {
@@ -295,6 +206,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 3px solid white;
+  border-radius: 10px;
   width: 70vw;
 }
 
@@ -328,7 +241,7 @@ body {
 }
 
 .profile-image {
-  background-image: url("/Me.png");
+  background-image: url("/images/Me.png");
   background-position: top center;
   background-size: 150px 220px;
   border: 3px solid white;
@@ -390,7 +303,7 @@ body {
   height: 25vh;
 }
 
-.navigation-options li:hover {
+.navigation-options .navLink:hover {
   border: 2px solid white;
   border-radius: 3px;
   padding: 5px;
@@ -399,6 +312,8 @@ body {
 }
 
 .welcome-container {
+  border: 3px solid white;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -455,5 +370,34 @@ body {
           animation-delay: 4s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
+}
+
+.about-container {
+  margin-top: 15vh;
+  height: 70vh;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.jobs-container {
+  margin-top: 15vh;
+  height: 70vh;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.projects-container {
+  margin-top: 15vh;
+  height: 70vh;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.contact-container {
+  margin-top: 15vh;
+  height: 70vh;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin-bottom: 15vh;
 }
 /*# sourceMappingURL=App.css.map */

@@ -14,7 +14,7 @@
 }
 
 .profile-image {
-    background-image: url('/Me.png');
+    background-image: url('/images/Me.png');
     background-position: top center;
     background-size: 150px 220px;
     border: 3px solid white;
@@ -53,7 +53,7 @@
         justify-content: space-evenly;
         height: 25vh;
     }
-    li:hover {
+    .navLink:hover {
         border: 2px solid white;
         border-radius: 3px;
         padding: 5px;

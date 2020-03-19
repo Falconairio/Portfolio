@@ -1,0 +1,5 @@
+.contact-container {
+    @include portfolioitemspacing;
+    @include whiteborder;
+    margin-bottom: 15vh;
+}

@@ -28,9 +28,15 @@ body {
   @include flexcolumn;
 }
 
-@import './table';
-@import './license';
+button {
+  color: white
+}
+
 @import './pre-contactbox';
 @import './portfolioitems';
 @import './sidenavbar';
 @import './welcome';
+@import './about';
+@import './jobs';
+@import './projects';
+@import './contact';

@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 export default class SideNavbar extends Component {
+
+    scroll = () => {
+        window.scrollBy(0,50)
+    }
+
     render() {
         return (
             <div className = "sidenavbar-container">
@@ -14,7 +19,7 @@ export default class SideNavbar extends Component {
                 <div className = 'site-navigation'>
                     <h1>Site Navigation</h1>
                     <div className = 'navigation-options'>
-                    <hr />
+                    <hr/>
                         <ul>
                             <li>About</li>
                             <li>Projects</li>

@@ -23,6 +23,15 @@ $max-width: 800px;
     align-items: center
 }
 
+@mixin whiteborder {
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+@mixin portfolioitemspacing {
+    margin-top: 15vh;
+}
+
 @mixin mobile {
     @media (max-width: $max-width) {
         @content

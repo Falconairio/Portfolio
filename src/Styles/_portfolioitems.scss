@@ -1,0 +1,6 @@
+.portfolio-items {
+    @include flexcolumn;
+    // @include whiteborder;
+
+    width: 70vw;
+}

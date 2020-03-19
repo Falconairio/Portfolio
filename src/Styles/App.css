@@ -84,18 +84,28 @@ table {
   }
 }
 
+@-webkit-keyframes welcometext {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes welcometext {
+  0% {
+    opacity: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   width: 100vw;
-  height: 100vh;
+  overflow-y: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 body {
@@ -109,11 +119,11 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: black;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .placeholder {
   color: white;
-  font-family: 'Montserrat', sans-serif;
   font-size: 10vw;
   overflow-wrap: normal;
 }
@@ -277,6 +287,17 @@ body {
   color: white;
 }
 
+.portfolio-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70vw;
+}
+
 .sidenavbar-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,14 +310,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 3px solid white;
+  border-radius: 10px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: fixed;
   top: 12.5vh;
   right: 7vw;
-  border: 3px solid white;
-  border-radius: 10px;
   padding: 25px 25px 25px 25px;
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -312,8 +333,8 @@ body {
   background-size: 150px 220px;
   border: 3px solid white;
   border-radius: 100px;
-  height: 150px;
-  width: 150px;
+  height: 12.5vw;
+  width: 12.5vw;
 }
 
 .name-title {
@@ -344,7 +365,7 @@ body {
 }
 
 .name-title hr {
-  width: 11rem;
+  width: 12.5vw;
 }
 
 .site-navigation h1 {
@@ -375,5 +396,64 @@ body {
   padding: 5px;
   font-size: 1.6vw;
   cursor: pointer;
+}
+
+.welcome-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15vh;
+  height: 70vh;
+  color: white;
+}
+
+.welcome-container h1 {
+  font-size: 7vw;
+  margin-bottom: 4vh;
+  -webkit-animation-name: welcometext;
+          animation-name: welcometext;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  opacity: 1;
+}
+
+.welcome-container p:first-of-type {
+  font-size: 3vw;
+  -webkit-animation-name: welcometext;
+          animation-name: welcometext;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.welcome-container p:nth-of-type(2) {
+  font-size: 1.5vw;
+  margin-top: 2.5vh;
+  -webkit-animation-name: welcometext;
+          animation-name: welcometext;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 /*# sourceMappingURL=App.css.map */

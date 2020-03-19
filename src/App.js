@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.scss';
-import Table from './Components/Table'
+import ContactBox from './Components/ContactBox';
 
 function App() {
   return (
     <div className="App">
-        <Table />
+        <div className = 'flexcolumn'>
+          <div className = 'placeholder'>COMING SOON</div>
+          <ContactBox />
+        </div>
     </div>
   );
 }

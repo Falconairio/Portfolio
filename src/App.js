@@ -1,6 +1,7 @@
 import React from 'react';
 import './Styles/App.css';
 import ContactBox from './Components/ContactBox';
+import SideNavbar from './Components/SideNavbar';
 
 function App() {
   return (

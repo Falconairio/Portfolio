@@ -72,6 +72,18 @@ table {
   }
 }
 
+@-webkit-keyframes sidenavbar {
+  0% {
+    margin-right: -200px;
+  }
+}
+
+@keyframes sidenavbar {
+  0% {
+    margin-right: -200px;
+  }
+}
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -103,6 +115,7 @@ body {
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 10vw;
+  overflow-wrap: normal;
 }
 
 .placeholder-container {
@@ -219,8 +232,6 @@ body {
 }
 
 .contact-box-container {
-  border: 4px solid white;
-  border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,16 +239,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 20vw;
-  height: 10vh;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-item-align: center;
       align-self: center;
+  border: 4px solid white;
+  border-radius: 5px;
+  width: 20vw;
+  height: 10vh;
   -webkit-animation-name: aboutbox;
           animation-name: aboutbox;
   -webkit-animation-duration: 1s;
@@ -249,12 +268,112 @@ body {
   text-decoration: none;
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 
 .contact-box-container a:visited {
   text-decoration: none;
   color: white;
+}
+
+.sidenavbar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  top: 12.5vh;
+  right: 7vw;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 25px 25px 25px 25px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-animation-name: sidenavbar;
+          animation-name: sidenavbar;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.profile-image {
+  background-image: url("/Me.png");
+  background-position: top center;
+  background-size: 150px 220px;
+  border: 3px solid white;
+  border-radius: 100px;
+  height: 150px;
+  width: 150px;
+}
+
+.name-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2vh 0 2vh 0;
+}
+
+.name-title h1 {
+  font-size: 2vw;
+}
+
+.name-title p {
+  font-size: 1.2vw;
+  margin-top: 1vh;
+}
+
+.name-title hr {
+  width: 11rem;
+}
+
+.site-navigation h1 {
+  font-size: 1.5vw;
+}
+
+.navigation-options ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 25vh;
+}
+
+.navigation-options li:hover {
+  border: 2px solid white;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 1.6vw;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

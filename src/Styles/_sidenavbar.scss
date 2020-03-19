@@ -1,0 +1,64 @@
+.sidenavbar-container {
+    @include flexcolumn;
+    @include flexcenterhorizontal;
+    justify-content: space-between;
+    position: fixed;
+    top: 12.5vh;
+    right: 7vw;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 25px 25px 25px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    animation-name: sidenavbar;
+    animation-duration: 1s;
+}
+
+.profile-image {
+    background-image: url('/Me.png');
+    background-position: top center;
+    background-size: 150px 220px;
+    border: 3px solid white;
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+}
+
+.name-title {
+    @include flexcolumn;
+    @include flexcenterhorizontal;
+    justify-content: space-between;
+    margin: 2vh 0 2vh 0;
+    h1 {
+        font-size: 2vw;
+    }
+    p {
+        font-size: 1.2vw;
+        margin-top: 1vh;
+    }
+    hr {
+        width: 11rem;
+    }
+}
+
+.site-navigation {
+    h1 {
+        font-size: 1.5vw
+    }
+}
+
+.navigation-options {
+    ul {
+        @include flexcolumn;
+        @include flexcenterhorizontal;
+        justify-content: space-evenly;
+        height: 25vh;
+    }
+    li:hover {
+        border: 2px solid white;
+        border-radius: 3px;
+        padding: 5px;
+        font-size: 1.6vw;
+        cursor: pointer;
+    }
+}

@@ -9,7 +9,18 @@ $max-width: 800px;
   
 @mixin flexrow {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+@mixin flexcenterhorizontal {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexcenterabsolute {
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 @mixin mobile {

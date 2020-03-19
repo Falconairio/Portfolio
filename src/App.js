@@ -5,7 +5,7 @@ import ContactBox from './Components/ContactBox';
 function App() {
   return (
     <div className="App">
-        <div className = 'flexcolumn'>
+        <div className = 'placeholder-container'>
           <div className = 'placeholder'>COMING SOON</div>
           <ContactBox />
         </div>

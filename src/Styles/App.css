@@ -48,6 +48,30 @@ table {
   border-spacing: 0;
 }
 
+@-webkit-keyframes aboutbox {
+  0% {
+    margin-top: 200px;
+  }
+  50% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 50px;
+  }
+}
+
+@keyframes aboutbox {
+  0% {
+    margin-top: 200px;
+  }
+  50% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 50px;
+  }
+}
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -81,7 +105,7 @@ body {
   font-size: 10vw;
 }
 
-.flexcolumn {
+.placeholder-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,6 +238,11 @@ body {
           align-items: center;
   -ms-flex-item-align: center;
       align-self: center;
+  -webkit-animation-name: aboutbox;
+          animation-name: aboutbox;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  margin-top: 50px;
 }
 
 .contact-box-container a {

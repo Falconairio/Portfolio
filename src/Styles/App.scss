@@ -1,4 +1,6 @@
 @import './resets';
+@import './variables';
+@import './keyframes';
 
 .App {
   width: 100vw;
@@ -19,13 +21,10 @@ body {
   font-size: 10vw;
 }
 
-.flexcolumn {
-  display: flex;
-  flex-direction: column;
+.placeholder-container {
+  @include flexcolumn;
 }
 
 @import './table';
-
 @import './license';
-
 @import './pre-contactbox';

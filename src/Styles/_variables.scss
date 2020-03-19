@@ -1,0 +1,19 @@
+$woodcolor: rgb(51, 36, 5);
+$woodcolor2: rgb(74, 53, 10);
+$max-width: 800px;
+
+@mixin flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+  
+@mixin flexrow {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin mobile {
+    @media (max-width: $max-width) {
+        @content
+    }
+}

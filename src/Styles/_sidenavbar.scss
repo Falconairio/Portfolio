@@ -23,6 +23,15 @@
     width: 12.5vw;
 }
 
+.image-rotate {
+    animation-name: imagerotate;
+    animation-duration: 1s;
+}
+.fade-out {
+    animation-name: fadeout;
+    animation-duration: 1s;
+}
+
 .name-title {
     @include flexcolumn;
     @include flexcenterhorizontal;

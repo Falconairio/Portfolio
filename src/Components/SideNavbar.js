@@ -3,11 +3,33 @@ import { Link } from "react-scroll";
 
 export default class SideNavbar extends Component {
 
+    state = {
+        animate: false
+    }
+
+    profileimageeffect = () => {
+        this.setState({animate: true})
+        setTimeout(() => { this.setState({animate:false}) }, 1000);
+    }
+
+    returnImageEffect = () => {
+        let random = Math.floor(Math.random() * 3)
+        if(random === 2) {
+            return 'fade-out'
+        } else {
+            return 'image-rotate'
+        }
+    }
+
 
     render() {
+        const animate = this.state.animate ? this.returnImageEffect() : ''
+        const classes = `profile-image ${animate}`
+
+
         return (
             <div className = "sidenavbar-container">
-                <div className = "profile-image" />
+                <div className = {classes} onClick = {this.profileimageeffect}/>
                 <div className = 'name-title'>
                     <hr/>
                     <h1>Griffith Terry</h1>

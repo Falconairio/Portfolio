@@ -106,6 +106,32 @@ table {
   }
 }
 
+@-webkit-keyframes imagerotate {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes imagerotate {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadeout {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  50% {
+    opacity: 0;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -116,6 +142,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: white;
 }
 
 body {
@@ -250,6 +277,20 @@ button {
   width: 12.5vw;
 }
 
+.image-rotate {
+  -webkit-animation-name: imagerotate;
+          animation-name: imagerotate;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.fade-out {
+  -webkit-animation-name: fadeout;
+          animation-name: fadeout;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
 .name-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,6 +418,13 @@ button {
   height: 70vh;
   border: 3px solid white;
   border-radius: 10px;
+}
+
+.about-container h1 {
+  text-decoration: underline;
+  margin-left: 3vw;
+  margin-top: 2vh;
+  font-size: 2vw;
 }
 
 .jobs-container {

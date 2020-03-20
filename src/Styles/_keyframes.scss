@@ -9,3 +9,9 @@
 @keyframes welcometext {
     0% {opacity: 0;}
 }
+@keyframes imagerotate {
+    0% { transform: rotate(360deg); }
+}
+@keyframes fadeout {
+    50% { opacity: 0;}
+}

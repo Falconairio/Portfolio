@@ -1,4 +1,10 @@
 .about-container {
     @include portfolioitemspacing;
     @include whiteborder;
+    h1 {
+        text-decoration: underline;
+        margin-left: 3vw;
+        margin-top: 2vh;
+        font-size: 2vw;
+    }
 }

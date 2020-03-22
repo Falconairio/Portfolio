@@ -58,6 +58,15 @@ table {
   -ms-overflow-style: none;
 }
 
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
 @-webkit-keyframes aboutbox {
   0% {
     margin-top: 200px;
@@ -132,6 +141,18 @@ table {
   }
 }
 
+@-webkit-keyframes zoomin {
+  50% {
+    background-size: 300px 440px;
+  }
+}
+
+@keyframes zoomin {
+  50% {
+    background-size: 300px 440px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -175,10 +196,6 @@ body {
           flex-direction: column;
 }
 
-button {
-  color: white;
-}
-
 .contact-box-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,7 +231,6 @@ button {
 
 .contact-box-container a {
   text-decoration: none;
-  color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5vw;
   font-weight: bold;
@@ -222,7 +238,6 @@ button {
 
 .contact-box-container a:visited {
   text-decoration: none;
-  color: white;
 }
 
 .portfolio-items {
@@ -233,8 +248,6 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 3px solid white;
-  border-radius: 10px;
   width: 70vw;
 }
 
@@ -250,7 +263,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 3px solid white;
+  border: 2px solid white;
   border-radius: 10px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -259,7 +272,6 @@ button {
   top: 12.5vh;
   right: 7vw;
   padding: 25px 25px 25px 25px;
-  color: white;
   font-family: 'Montserrat', sans-serif;
   -webkit-animation-name: sidenavbar;
           animation-name: sidenavbar;
@@ -270,11 +282,15 @@ button {
 .profile-image {
   background-image: url("/images/Me.png");
   background-position: top center;
-  background-size: 150px 220px;
+  background-size: 13.5vw 19vw;
   border: 3px solid white;
   border-radius: 100px;
   height: 12.5vw;
   width: 12.5vw;
+}
+
+.profile-image:hover {
+  cursor: pointer;
 }
 
 .image-rotate {
@@ -287,6 +303,13 @@ button {
 .fade-out {
   -webkit-animation-name: fadeout;
           animation-name: fadeout;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.background-zoom {
+  -webkit-animation-name: zoomin;
+          animation-name: zoomin;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
 }
@@ -353,8 +376,6 @@ button {
 }
 
 .welcome-container {
-  border: 3px solid white;
-  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -371,7 +392,6 @@ button {
           flex-direction: column;
   margin-top: 15vh;
   height: 70vh;
-  color: white;
 }
 
 .welcome-container h1 {
@@ -386,6 +406,10 @@ button {
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
   opacity: 1;
+}
+
+.welcome-container h1:hover {
+  cursor: pointer;
 }
 
 .welcome-container p:first-of-type {
@@ -416,8 +440,6 @@ button {
 .about-container {
   margin-top: 15vh;
   height: 70vh;
-  border: 3px solid white;
-  border-radius: 10px;
 }
 
 .about-container h1 {
@@ -430,22 +452,98 @@ button {
 .jobs-container {
   margin-top: 15vh;
   height: 70vh;
-  border: 3px solid white;
-  border-radius: 10px;
 }
 
 .projects-container {
   margin-top: 15vh;
   height: 70vh;
-  border: 3px solid white;
-  border-radius: 10px;
 }
 
 .contact-container {
   margin-top: 15vh;
   height: 70vh;
-  border: 3px solid white;
-  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin-bottom: 15vh;
+}
+
+.contact-container img:hover {
+  cursor: pointer;
+}
+
+.contact-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.contact-container h1 {
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+.contact-container a {
+  font-size: 1.3vw;
+}
+
+.contact-container a:hover {
+  text-decoration: underline;
+}
+
+.hide-icon {
+  display: none;
+}
+
+.unhide-icon {
+  -webkit-animation-name: welcometext;
+          animation-name: welcometext;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+.gmailicon {
+  width: 5vw;
+  height: 5vw;
+}
+
+.githubicon {
+  width: 7vw;
+  height: 7vw;
+}
+
+.linkedinIcon {
+  width: 4vw;
+  height: 4vw;
 }
 /*# sourceMappingURL=App.css.map */

@@ -3,7 +3,6 @@
     @include flexcenterabsolute;
     @include flexcolumn;
     @include portfolioitemspacing;
-    color: white;
     h1 {
         font-size: 7vw;
         margin-bottom: 4vh;
@@ -12,6 +11,9 @@
         animation-delay: 1s;
         animation-fill-mode: backwards;
         opacity: 1;
+    }
+    h1:hover {
+        cursor: pointer;
     }
     p:first-of-type {
         font-size: 3vw;

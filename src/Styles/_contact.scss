@@ -1,5 +1,47 @@
 .contact-container {
     @include portfolioitemspacing;
     @include whiteborder;
+    @include flexcolumn;
+    @include flexcenterabsolute;
+    justify-content: space-evenly;
     margin-bottom: 15vh;
+    img:hover {
+        cursor: pointer;
+    }
+    div {
+        @include flexrow;
+        @include flexcenterabsolute;
+        justify-content: space-evenly;
+    }
+    h1 {
+        font-weight: bold;
+        font-size: 2vw;
+    }
+    a {
+        font-size: 1.3vw;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+.hide-icon {
+    display: none;
+}
+.unhide-icon {
+    animation-name: welcometext;
+    animation-duration: 1s;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+.gmailicon {
+    width: 5vw;
+    height: 5vw;
+}
+.githubicon {
+    width: 7vw;
+    height: 7vw;
+}
+.linkedinIcon {
+    width: 4vw;
+    height: 4vw;
 }

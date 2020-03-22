@@ -2,12 +2,13 @@
     @include flexcolumn;
     @include flexcenterhorizontal;
     @include whiteborder;
+    border: 2px solid white;
+    border-radius: 10px;
     justify-content: space-between;
     position: fixed;
     top: 12.5vh;
     right: 7vw;
     padding: 25px 25px 25px 25px;
-    color: white;
     font-family: 'Montserrat', sans-serif;
     animation-name: sidenavbar;
     animation-duration: 1s;
@@ -16,11 +17,14 @@
 .profile-image {
     background-image: url('/images/Me.png');
     background-position: top center;
-    background-size: 150px 220px;
+    background-size: 13.5vw 19vw;
     border: 3px solid white;
     border-radius: 100px;
     height: 12.5vw;
     width: 12.5vw;
+}
+.profile-image:hover {
+    cursor: pointer;
 }
 
 .image-rotate {
@@ -29,6 +33,10 @@
 }
 .fade-out {
     animation-name: fadeout;
+    animation-duration: 1s;
+}
+.background-zoom {
+    animation-name: zoomin;
     animation-duration: 1s;
 }
 

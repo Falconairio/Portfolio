@@ -1,6 +1,8 @@
 $woodcolor: rgb(51, 36, 5);
 $woodcolor2: rgb(74, 53, 10);
 $max-width: 800px;
+$websitebackground : black;
+$websitetext: white;
 
 @mixin flexcolumn {
     display: flex;
@@ -16,6 +18,10 @@ $max-width: 800px;
     display: flex;
     align-items: center;
 }
+@mixin flexcentervertical {
+    display: flex;
+    justify-content: center;
+}
 
 @mixin flexcenterabsolute {
     display: flex;
@@ -24,8 +30,8 @@ $max-width: 800px;
 }
 
 @mixin whiteborder {
-    border: 3px solid white;
-    border-radius: 10px;
+    // border: 3px solid white;
+    // border-radius: 10px;
 }
 
 @mixin portfolioitemspacing {

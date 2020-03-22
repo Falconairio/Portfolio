@@ -8,16 +8,20 @@ export default class SideNavbar extends Component {
     }
 
     profileimageeffect = () => {
-        this.setState({animate: true})
-        setTimeout(() => { this.setState({animate:false}) }, 1000);
+        if(!this.state.animate) {
+            this.setState({animate: true})
+            setTimeout(() => { this.setState({animate:false}) }, 1000);
+        }
     }
 
     returnImageEffect = () => {
         let random = Math.floor(Math.random() * 3)
         if(random === 2) {
             return 'fade-out'
-        } else {
+        } else if(random === 1) {
             return 'image-rotate'
+        } else {
+            return 'background-zoom'
         }
     }
 

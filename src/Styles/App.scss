@@ -16,21 +16,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: $websitebackground;
   font-family: 'Montserrat', sans-serif;
 }
 .placeholder {
-  color: white;
+  color: $websitetext;
   font-size: 10vw;
   overflow-wrap: normal;
 }
 
 .placeholder-container {
   @include flexcolumn;
-}
-
-button {
-  color: white
 }
 
 @import './pre-contactbox';

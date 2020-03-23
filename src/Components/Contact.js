@@ -57,7 +57,7 @@ export default class Contact extends Component {
                 <h1>Contact</h1>
                 <div>
                     <img src = './images/GmailLogo.png' alt = '' className = 'gmailicon' onClick ={this.setEmailHidden} />
-                    <a href = '/' className = {classesEmail}>griffterrycode@gmail.com</a>
+                    <a href = 'mailto:griffterrycode@gmail.com' className = {classesEmail}>griffterrycode@gmail.com</a>
                 </div>
                 <div>
                     <a href = 'https://github.com/Falconairio' className = {classesGithub}>github.com/Falconairio</a>

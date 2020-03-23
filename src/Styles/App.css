@@ -513,6 +513,7 @@ body {
 
 .contact-container a {
   font-size: 1.3vw;
+  color: white;
 }
 
 .contact-container a:hover {

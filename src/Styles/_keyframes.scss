@@ -18,3 +18,27 @@
 @keyframes zoomin {
     50% {background-size: 300px 440px;}
 }
+@keyframes saturate {
+    50% {filter: saturate(8);}
+}
+@keyframes invert {
+    50% {filter: invert(.8);}
+}
+@keyframes blur {
+    50% {filter: blur(5px);}
+}
+@keyframes huerotate {
+    50% {filter: hue-rotate(90deg);}
+}
+@keyframes skew {
+    50% {transform: skew(15deg, 15deg);}
+}
+@keyframes spiral {
+    10% {background-position: right top;}
+    20% {background-position: right center;}
+    30% {background-position: right bottom;}
+    40% {background-position: center bottom ;}
+    50% {background-position: left bottom ;}
+    60% {background-position: left center ;}
+    70% {background-position: left top }
+}

@@ -65,6 +65,7 @@ a:visited {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 @-webkit-keyframes aboutbox {
@@ -150,6 +151,124 @@ a {
 @keyframes zoomin {
   50% {
     background-size: 300px 440px;
+  }
+}
+
+@-webkit-keyframes saturate {
+  50% {
+    -webkit-filter: saturate(8);
+            filter: saturate(8);
+  }
+}
+
+@keyframes saturate {
+  50% {
+    -webkit-filter: saturate(8);
+            filter: saturate(8);
+  }
+}
+
+@-webkit-keyframes invert {
+  50% {
+    -webkit-filter: invert(0.8);
+            filter: invert(0.8);
+  }
+}
+
+@keyframes invert {
+  50% {
+    -webkit-filter: invert(0.8);
+            filter: invert(0.8);
+  }
+}
+
+@-webkit-keyframes blur {
+  50% {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+}
+
+@keyframes blur {
+  50% {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+}
+
+@-webkit-keyframes huerotate {
+  50% {
+    -webkit-filter: hue-rotate(90deg);
+            filter: hue-rotate(90deg);
+  }
+}
+
+@keyframes huerotate {
+  50% {
+    -webkit-filter: hue-rotate(90deg);
+            filter: hue-rotate(90deg);
+  }
+}
+
+@-webkit-keyframes skew {
+  50% {
+    -webkit-transform: skew(15deg, 15deg);
+            transform: skew(15deg, 15deg);
+  }
+}
+
+@keyframes skew {
+  50% {
+    -webkit-transform: skew(15deg, 15deg);
+            transform: skew(15deg, 15deg);
+  }
+}
+
+@-webkit-keyframes spiral {
+  10% {
+    background-position: right top;
+  }
+  20% {
+    background-position: right center;
+  }
+  30% {
+    background-position: right bottom;
+  }
+  40% {
+    background-position: center bottom;
+  }
+  50% {
+    background-position: left bottom;
+  }
+  60% {
+    background-position: left center;
+  }
+  70% {
+    background-position: left top;
+  }
+}
+
+@keyframes spiral {
+  10% {
+    background-position: right top;
+  }
+  20% {
+    background-position: right center;
+  }
+  30% {
+    background-position: right bottom;
+  }
+  40% {
+    background-position: center bottom;
+  }
+  50% {
+    background-position: left bottom;
+  }
+  60% {
+    background-position: left center;
+  }
+  70% {
+    background-position: left top;
   }
 }
 
@@ -249,6 +368,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 70vw;
+  margin-left: 1.5vw;
 }
 
 .sidenavbar-container {
@@ -271,12 +391,17 @@ body {
   position: fixed;
   top: 12.5vh;
   right: 7vw;
+  width: 16vw;
   padding: 25px 25px 25px 25px;
   font-family: 'Montserrat', sans-serif;
   -webkit-animation-name: sidenavbar;
           animation-name: sidenavbar;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
+}
+
+.sidenavbar-container p:hover {
+  cursor: pointer;
 }
 
 .profile-image {
@@ -310,6 +435,48 @@ body {
 .background-zoom {
   -webkit-animation-name: zoomin;
           animation-name: zoomin;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.saturate {
+  -webkit-animation-name: saturate;
+          animation-name: saturate;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.invert {
+  -webkit-animation-name: invert;
+          animation-name: invert;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.blur {
+  -webkit-animation-name: blur;
+          animation-name: blur;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.huerotate {
+  -webkit-animation-name: huerotate;
+          animation-name: huerotate;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.skew {
+  -webkit-animation-name: skew;
+          animation-name: skew;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.spiral {
+  -webkit-animation-name: spiral;
+          animation-name: spiral;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
 }
@@ -365,6 +532,10 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 25vh;
+}
+
+.navigation-options .navLink {
+  font-size: 1.3vw;
 }
 
 .navigation-options .navLink:hover {
@@ -440,6 +611,8 @@ body {
 .about-container {
   margin-top: 15vh;
   height: 70vh;
+  border: 3px solid white;
+  border-radius: 10px;
 }
 
 .about-container h1 {
@@ -513,7 +686,6 @@ body {
 
 .contact-container a {
   font-size: 1.3vw;
-  color: white;
 }
 
 .contact-container a:hover {

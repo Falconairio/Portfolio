@@ -4,7 +4,9 @@ import { Link } from "react-scroll";
 export default class SideNavbar extends Component {
 
     state = {
-        animate: false
+        animate: false,
+        titles: ["Web Developer", "Programmer", "Software Engineer"],
+        titleSelect: 0
     }
 
     profileimageeffect = () => {
@@ -15,13 +17,34 @@ export default class SideNavbar extends Component {
     }
 
     returnImageEffect = () => {
-        let random = Math.floor(Math.random() * 3)
-        if(random === 2) {
+        let random = Math.floor(Math.random() * 9)
+        if(random === 8) {
+            return 'spiral'
+        } else if(random === 7) {
+            return 'skew'
+        } else if(random === 6) {
+            return 'huerotate'
+        } else if(random === 5) {
+            return 'blur'
+        } else if(random === 4) {
+            return 'invert'
+        } else if(random === 3) {
+            return 'saturate'
+        } else if (random === 2) {
             return 'fade-out'
         } else if(random === 1) {
             return 'image-rotate'
         } else {
             return 'background-zoom'
+        }
+    }
+
+    changeTitle = () => {
+        let titleSelect = this.state.titleSelect;
+        if(titleSelect !== 2) {
+            this.setState({ titleSelect: titleSelect + 1 })
+        } else {
+            this.setState({ titleSelect: 0 })
         }
     }
 
@@ -37,7 +60,7 @@ export default class SideNavbar extends Component {
                 <div className = 'name-title'>
                     <hr/>
                     <h1>Griffith Terry</h1>
-                    <p>Junior Software Engineer</p>
+                    <p onClick = {this.changeTitle}>Junior {this.state.titles[this.state.titleSelect]}</p>
                     <hr/>
                 </div>
                 <div className = 'site-navigation'>
@@ -60,6 +83,7 @@ export default class SideNavbar extends Component {
                             to="projects"
                             spy={true}
                             smooth={true}
+                            delay={-10}
                             offset={-105}
                             duration= {400}
                         >Projects</Link>

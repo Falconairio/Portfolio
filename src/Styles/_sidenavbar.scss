@@ -8,10 +8,15 @@
     position: fixed;
     top: 12.5vh;
     right: 7vw;
+    width: 16vw;
     padding: 25px 25px 25px 25px;
     font-family: 'Montserrat', sans-serif;
     animation-name: sidenavbar;
     animation-duration: 1s;
+
+    p:hover {
+        cursor: pointer;
+    }
 }
 
 .profile-image {
@@ -37,6 +42,30 @@
 }
 .background-zoom {
     animation-name: zoomin;
+    animation-duration: 1s;
+}
+.saturate {
+    animation-name: saturate;
+    animation-duration: 1s;
+}
+.invert {
+    animation-name: invert;
+    animation-duration: 1s;
+}
+.blur {
+    animation-name: blur;
+    animation-duration: 1s;
+}
+.huerotate {
+    animation-name: huerotate;
+    animation-duration: 1s;
+}
+.skew {
+    animation-name: skew;
+    animation-duration: 1s;
+}
+.spiral {
+    animation-name: spiral;
     animation-duration: 1s;
 }
 
@@ -69,6 +98,9 @@
         @include flexcenterhorizontal;
         justify-content: space-evenly;
         height: 25vh;
+    }
+    .navLink {
+        font-size: 1.3vw
     }
     .navLink:hover {
         border: 2px solid white;

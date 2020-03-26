@@ -1,4 +1,5 @@
 .projects-container {
     @include portfolioitemspacing;
     @include whiteborder;
+    @include flexcenterhorizontal;
 }

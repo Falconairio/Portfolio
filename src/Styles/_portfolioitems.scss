@@ -3,4 +3,8 @@
     @include whiteborder;
     width: 70vw;
     margin-left: 1.5vw;
+    @include mobile {
+        width: 100vw;
+        @include flexcenterhorizontal
+    }
 }

@@ -1,21 +1,26 @@
 .sidenavbar-container {
-    @include flexcolumn;
-    @include flexcenterhorizontal;
-    @include whiteborder;
-    border: 2px solid white;
-    border-radius: 10px;
-    justify-content: space-between;
-    position: fixed;
-    top: 12.5vh;
-    right: 7vw;
-    width: 16vw;
-    padding: 25px 25px 25px 25px;
-    font-family: 'Montserrat', sans-serif;
-    animation-name: sidenavbar;
-    animation-duration: 1s;
+    @include desktop {
+        @include flexcolumn;
+        @include flexcenterhorizontal;
+        @include whiteborder;
+        border: 2px solid white;
+        border-radius: 10px;
+        justify-content: space-between;
+        position: fixed;
+        top: 12.5vh;
+        right: 4vw;
+        width: 16vw;
+        padding: 25px 25px 25px 25px;
+        font-family: 'Montserrat', sans-serif;
+        animation-name: sidenavbar;
+        animation-duration: 1s;
 
-    p:hover {
-        cursor: pointer;
+        p:hover {
+            cursor: pointer;
+        }
+    }
+    @include mobile {
+        display: none;
     }
 }
 

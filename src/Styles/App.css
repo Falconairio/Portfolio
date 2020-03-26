@@ -371,37 +371,56 @@ body {
   margin-left: 1.5vw;
 }
 
-.sidenavbar-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 2px solid white;
-  border-radius: 10px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: fixed;
-  top: 12.5vh;
-  right: 7vw;
-  width: 16vw;
-  padding: 25px 25px 25px 25px;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-animation-name: sidenavbar;
-          animation-name: sidenavbar;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+@media (max-width: 800px) {
+  .portfolio-items {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
-.sidenavbar-container p:hover {
-  cursor: pointer;
+@media (min-width: 800px) {
+  .sidenavbar-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    top: 12.5vh;
+    right: 4vw;
+    width: 16vw;
+    padding: 25px 25px 25px 25px;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-animation-name: sidenavbar;
+            animation-name: sidenavbar;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+  }
+  .sidenavbar-container p:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  .sidenavbar-container {
+    display: none;
+  }
 }
 
 .profile-image {
@@ -546,6 +565,42 @@ body {
   cursor: pointer;
 }
 
+@media (min-width: 800px) {
+  .topnav-container {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .topnav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    border-bottom: 2px solid white;
+    width: 100vw;
+    height: 5vh;
+    background-color: black;
+    font-weight: bolder;
+    top: 0;
+    position: fixed;
+  }
+  .topnav-container vr {
+    height: 5vh;
+    border: 1px solid white;
+  }
+}
+
 .welcome-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -566,7 +621,6 @@ body {
 }
 
 .welcome-container h1 {
-  font-size: 7vw;
   margin-bottom: 4vh;
   -webkit-animation-name: welcometext;
           animation-name: welcometext;
@@ -584,7 +638,6 @@ body {
 }
 
 .welcome-container p:first-of-type {
-  font-size: 3vw;
   -webkit-animation-name: welcometext;
           animation-name: welcometext;
   -webkit-animation-duration: 2s;
@@ -596,7 +649,7 @@ body {
 }
 
 .welcome-container p:nth-of-type(2) {
-  font-size: 1.5vw;
+  opacity: 0.6;
   margin-top: 2.5vh;
   -webkit-animation-name: welcometext;
           animation-name: welcometext;
@@ -608,18 +661,70 @@ body {
           animation-fill-mode: backwards;
 }
 
+@media (min-width: 800px) {
+  .welcome-container h1 {
+    font-size: 11vh;
+  }
+  .welcome-container p:first-of-type {
+    font-size: 5vh;
+  }
+  .welcome-container p:nth-of-type(2) {
+    font-size: 3vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .welcome-container h1 {
+    font-size: 15vw;
+  }
+  .welcome-container p:first-of-type {
+    font-size: 5vw;
+  }
+}
+
 .about-container {
   margin-top: 15vh;
   height: 70vh;
-  border: 3px solid white;
-  border-radius: 10px;
+}
+
+.about-container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-top: 3vh;
 }
 
 .about-container h1 {
-  text-decoration: underline;
-  margin-left: 3vw;
-  margin-top: 2vh;
   font-size: 2vw;
+  text-decoration: underline;
+  margin-bottom: 5vh;
+}
+
+.about-container element {
+  font-size: 20px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.skills-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .jobs-container {
@@ -630,6 +735,12 @@ body {
 .projects-container {
   margin-top: 15vh;
   height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contact-container {
@@ -681,11 +792,11 @@ body {
 
 .contact-container h1 {
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 3vh;
 }
 
 .contact-container a {
-  font-size: 1.3vw;
+  font-size: 2.3vh;
 }
 
 .contact-container a:hover {
@@ -701,22 +812,22 @@ body {
           animation-name: welcometext;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
-  margin-right: 1vw;
-  margin-left: 1vw;
+  margin-right: 1.5vh;
+  margin-left: 1.5vh;
 }
 
 .gmailicon {
-  width: 5vw;
-  height: 5vw;
+  width: 8vh;
+  height: 8vh;
 }
 
 .githubicon {
-  width: 7vw;
-  height: 7vw;
+  width: 10vh;
+  height: 10vh;
 }
 
 .linkedinIcon {
-  width: 4vw;
-  height: 4vw;
+  width: 7vh;
+  height: 7vh;
 }
 /*# sourceMappingURL=App.css.map */

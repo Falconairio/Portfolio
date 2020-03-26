@@ -1,12 +1,25 @@
 .about-container {
     @include portfolioitemspacing;
     @include whiteborder;
-    border: 3px solid white;
-    border-radius: 10px;
-    h1 {
-        text-decoration: underline;
+    section {
+        @include flexcolumn;
         margin-left: 3vw;
-        margin-top: 2vh;
-        font-size: 2vw;
+        margin-right: 3vw;
+        margin-top: 3vh;
     }
+    h1 {
+        font-size: 2vw;
+        text-decoration: underline;
+        margin-bottom: 5vh;
+    }
+    element {
+        font-size: 20px;
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+}
+.skills-container {
+    @include flexrow;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

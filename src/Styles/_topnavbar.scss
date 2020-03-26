@@ -1,0 +1,21 @@
+.topnav-container {
+    @include desktop {
+        display: none
+    }
+    @include mobile {
+        @include flexrow;
+        @include flexcenterhorizontal;
+        justify-content: space-evenly;
+        border-bottom: 2px solid white;
+        width: 100vw;
+        height: 5vh;
+        background-color: black;
+        font-weight: bolder;
+        top: 0;
+        position: fixed;
+        vr {
+            height: 5vh;
+            border: 1px solid white
+        }
+    }
+}

@@ -4,7 +4,7 @@
     }
     @include mobile {
         @include flexrow;
-        @include flexcenterhorizontal;
+        @include flexcentervertical;
         justify-content: space-evenly;
         border-bottom: 2px solid white;
         width: 100vw;

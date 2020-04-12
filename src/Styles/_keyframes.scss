@@ -37,8 +37,15 @@
     10% {background-position: right top;}
     20% {background-position: right center;}
     30% {background-position: right bottom;}
-    40% {background-position: center bottom ;}
-    50% {background-position: left bottom ;}
-    60% {background-position: left center ;}
-    70% {background-position: left top }
+    40% {background-position: center bottom;}
+    50% {background-position: left bottom;}
+    60% {background-position: left center;}
+    70% {background-position: left top;}
+}
+
+@keyframes projectgrow {
+    100% {  height: 21vh; 
+            width: 36vh;
+
+         }
 }

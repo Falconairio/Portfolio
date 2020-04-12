@@ -15,11 +15,11 @@ $portfolioitemheight: 70vw;
     flex-direction: row;
 }
 
-@mixin flexcenterhorizontal {
+@mixin flexcentervertical {
     display: flex;
     align-items: center;
 }
-@mixin flexcentervertical {
+@mixin flexcenterhorizontal {
     display: flex;
     justify-content: center;
 }

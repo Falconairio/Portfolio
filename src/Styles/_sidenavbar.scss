@@ -1,7 +1,7 @@
 .sidenavbar-container {
     @include desktop {
         @include flexcolumn;
-        @include flexcenterhorizontal;
+        @include flexcentervertical;
         @include whiteborder;
         border: 2px solid white;
         border-radius: 10px;
@@ -76,7 +76,7 @@
 
 .name-title {
     @include flexcolumn;
-    @include flexcenterhorizontal;
+    @include flexcentervertical;
     justify-content: space-between;
     margin: 2vh 0 2vh 0;
     h1 {
@@ -100,12 +100,12 @@
 .navigation-options {
     ul {
         @include flexcolumn;
-        @include flexcenterhorizontal;
+        @include flexcentervertical;
         justify-content: space-evenly;
         height: 25vh;
     }
     .navLink {
-        font-size: 1.3vw
+        font-size: 1.3vw;
     }
     .navLink:hover {
         border: 2px solid white;

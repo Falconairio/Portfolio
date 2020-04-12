@@ -1,10 +1,13 @@
 .portfolio-items {
     @include flexcolumn;
     @include whiteborder;
-    width: 70vw;
+
     margin-left: 1.5vw;
+    @include desktop {
+        width: 70vw;
+    }
     @include mobile {
         width: 100vw;
-        @include flexcenterhorizontal
+        @include flexcentervertical
     }
 }

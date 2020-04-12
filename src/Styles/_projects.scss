@@ -1,5 +1,203 @@
 .projects-container {
     @include portfolioitemspacing;
     @include whiteborder;
+    @include flexcenterabsolute;
+    @include flexcolumn;
+    // border: 3px solid white;
+    h1 {
+        font-weight: bolder;
+        margin-bottom: 3vh;
+        @include mobile {
+            margin-top: 5vh;
+            font-size: 3vh; 
+        }
+        @include desktop {
+            font-size: 4vh;
+        }
+    }
+}
+.projects {
+    @include flexrow;
     @include flexcenterhorizontal;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    @include desktop {
+        width: 59vw;
+    }
+    @include mobile {
+        width: 100vw;
+    }
+}
+.project {
+    min-height: 1px;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 20vh;
+    width: 35vh;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    align-items: flex-end;
+    transition-property: width, height;
+    transition: all 0.25s ease-in-out;
+    footer {
+        padding-bottom: 1vh;
+        padding-top: 1vh;
+        border-radius: 10px;
+        text-align: center;
+        width: 35vh;
+    }
+    @include mobile {
+        margin-bottom: 5vh;
+    }
+    @include desktop {
+        // margin-right: 5vh;
+        margin-bottom: 1vh;
+    }
+}
+
+.project:hover {
+    // cursor: pointer;
+    // // animation-name: projectgrow;
+    // // background-repeat: no-repeat;
+    // // animation-duration: 1s;
+    // // animation-fill-mode: forwards;
+    // height: 21vh; 
+    // width: 36vh;
+}
+
+.trampoline {
+    background-image: url("/images/TrampolineTimeForever.png");
+    background-position: center;
+    background-size: 45vh;
+    background-repeat: no-repeat;
+}
+.petsit {
+    background-image: url("/images/Petsit2.png");
+    background-position: top center;
+    background-size: 30vh;
+    background-repeat: no-repeat;
+    color: black;
+    font-weight: bolder;
+    background-color: white;
+}
+.canary {
+    background-image: url("/images/Canary.png");
+    background-position: top center;
+    background-size: 30vh;
+    background-repeat: no-repeat;
+    color: black;
+    font-weight: bolder;
+    background-color: white;
+}
+
+.dissapear {
+    width: 0;
+    height: 0;
+    border: 0;
+}
+
+.destroy {
+    display: none;
+}
+
+.appear {
+    background-image: none;
+    background-color: black;
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 80vh;
+    height: 60vh;
+    color: white;
+    align-items: flex-start;
+}
+
+.projectdetails {
+    @include flexcolumn;
+    margin-left: 3vh;
+    margin-top: 3vh;
+    h2 {
+        font-size: 4vh;
+        margin-bottom: 2vh;
+    }
+    p {
+        width: 20vw;
+        margin-bottom: 2vh;
+    }
+    h3 {
+        font-size: 2.5vh;
+        margin-bottom: 1vh;
+        margin-left: -2vh;
+        text-decoration: underline;
+    }
+    ul {
+        list-style: square;
+    }
+    li {
+        margin-bottom: 0.4vh;
+    }
+}
+
+.featuresandtechnologies {
+    @include flexrow;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    width: 60vh;
+    margin-left: 2vh;
+    div:first-child {
+        margin-right: 4vh;
+    }
+}
+
+.collaborators {
+    @include flexcolumn;
+    h3 {
+        text-decoration: none;
+    }
+    margin-left: 1.5vh;
+}
+
+.collaborator {
+    @include flexrow;
+    @include flexcentervertical;
+    justify-content: space-between;
+    a {
+        font-size: 3vh;
+        transition: font-size 0.3s;
+    }
+    a:hover {
+        text-decoration: underline;
+        font-size: 3.2vh;
+    }
+    button {
+        background-color: black;
+        border: 1px solid white;
+        color: white;
+        border-radius: 5px;
+        font-family: 'Montserrat', sans-serif;
+        width: 8vh;
+        font-size: 2.5vh;
+        padding: 4px 4px 4px 4px;
+        margin-top: -2px;
+    }
+}
+
+.nameandlinks {
+    @include flexrow;
+    @include flexcentervertical;
+    justify-content: space-between;
+    width: 70vh;
+}
+
+.projectlink {
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-right: 2vh;
+}
+.projectlink:hover {
+    background-color: white;
+    color: black;
 }

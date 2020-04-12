@@ -113,10 +113,15 @@
     align-items: flex-start;
 }
 
+.fadeout {
+    opacity: 0;
+}
+
 .projectdetails {
     @include flexcolumn;
     margin-left: 3vh;
     margin-top: 3vh;
+    transition: opacity 1s ease-in;
     h2 {
         font-size: 4vh;
         margin-bottom: 2vh;
@@ -168,7 +173,6 @@
     }
     a:hover {
         text-decoration: underline;
-        font-size: 3.2vh;
     }
     button {
         background-color: black;

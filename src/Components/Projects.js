@@ -26,7 +26,7 @@ export default class Projects extends Component {
                         name: "Johann Moreno",
                         link: "https://github.com/Johanson1988"
                     }],
-                    classes: "projectdetails"
+                    classes: "projectdetails fadeout"
                 }
             },
             {
@@ -49,7 +49,7 @@ export default class Projects extends Component {
                         name: "Frederic Vannier",
                         link: "https://github.com/Fred011"
                     }],
-                    classes: "projectdetails"
+                    classes: "projectdetails fadeout"
                 }
             },
             {
@@ -60,7 +60,7 @@ export default class Projects extends Component {
                 info: {
                     description: "Pong style game made for Ironhack's modele 1 project week",
                     technologies: ["Canvas","HTML","CSS","Javascript"],
-                    features: ["Play by keeping the ball from touching the bottom of the screen"],
+                    features: ["Play by keeping the ball from touching the bottom of the screen using a trampoline that you draw with your mouse","Select from multiple difficulties","Enter name to be put on the leaderboard", "Unlock secrets based on name entered"],
                     links: [{
                         name: "Deploy",
                         link: "https://falconairio.github.io/Trampoline-Time-Forever/"
@@ -68,15 +68,17 @@ export default class Projects extends Component {
                         name: "Repo",
                         link: "https://github.com/Falconairio/Trampoline-Time-Forever"
                     }],
-                    classes: "projectdetails"
+                    classes: "projectdetails fadeout"
                 }
             }
         ],
         vw:  Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-        vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+        vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+        isAnimating: false
     }
 
     selectProject = (project) => {
+        this.setState({isAnimating: true})
         let projects = this.state.projects;
         projects = projects.map((projectObj) => {
             if(projectObj !== project) {
@@ -99,19 +101,39 @@ export default class Projects extends Component {
                         return projectObj
                     } else return projectObj
                 })
-                this.setState({ projects })
+                this.setState({ projects }, () => {
+                    projects = projects.map((projectObj) => {
+                        if(projectObj === project) {
+                            let classes = projectObj.info.classes.slice(0, projectObj.classes.indexOf("fadeout"))
+                            projectObj.info.classes = classes
+                            return projectObj
+                        } else return projectObj
+                    })
+                    this.setState({ projects, isAnimating: false })
+                })
             }, 250)
         })
     }
 
     unselectProject = (project) => {
+        this.setState({ isAnimating: true })
         let projects = this.state.projects;
+        
         projects = projects.map((projectObj) => {
-            if(projectObj !== project) {
-                let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("destroy"))
-                projectObj.classes = classes
+            if(projectObj === project) {
+                let classes = projectObj.info.classes.concat(" fadeout")
+                projectObj.info.classes = classes
                 return projectObj
             } else return projectObj
+        })
+        this.setState({ projects }, () => {
+            setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj !== project) {
+                    let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("destroy"))
+                    projectObj.classes = classes
+                    return projectObj
+                } else return projectObj
         })
         this.setState({ projects }, () => {
             projects = projects.map((projectObj) => {
@@ -126,18 +148,20 @@ export default class Projects extends Component {
                     return projectObj
                 }
             })
-            this.setState({ projects })
-        })}
+            this.setState({ projects, isAnimating: false })
+        })}, 700)})}
 
     chooseSelectOrUnselect = (project, fromButton) => {
-        if(this.state.vw > 800) {
-            if(project.isSelected) {
-                this.unselectProject(project)
+        if(!this.state.isAnimating) {
+            if(this.state.vw > 800) {
+                if(project.isSelected) {
+                    this.unselectProject(project)
+                } else {
+                    this.selectProject(project)
+                }
             } else {
-                this.selectProject(project)
+                this.renderModal(project)
             }
-        } else {
-            this.renderModal(project)
         }
     }
 
@@ -188,7 +212,7 @@ export default class Projects extends Component {
                                                             )
                                                         })
                                                     }
-                                                    <button onClick = {() => this.chooseSelectOrUnselect(project,true)}>
+                                                    <button onClick = {() => {}}>
                                                         Back
                                                     </button>
                                                 </div>

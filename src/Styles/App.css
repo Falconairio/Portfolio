@@ -910,6 +910,10 @@ body {
           align-items: flex-start;
 }
 
+.fadeout {
+  opacity: 0;
+}
+
 .projectdetails {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -920,6 +924,8 @@ body {
           flex-direction: column;
   margin-left: 3vh;
   margin-top: 3vh;
+  -webkit-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in;
 }
 
 .projectdetails h2 {
@@ -1007,7 +1013,6 @@ body {
 
 .collaborator a:hover {
   text-decoration: underline;
-  font-size: 3.2vh;
 }
 
 .collaborator button {

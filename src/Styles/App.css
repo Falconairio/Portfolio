@@ -68,6 +68,10 @@ a {
   color: white;
 }
 
+button:focus {
+  outline: none;
+}
+
 @-webkit-keyframes aboutbox {
   0% {
     margin-top: 200px;
@@ -834,8 +838,8 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-transition-property: width, height background-image background-color;
-  transition-property: width, height background-image background-color;
+  -webkit-transition-property: width, height;
+  transition-property: width, height;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -912,6 +916,10 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.appear:hover {
+  cursor: default;
 }
 
 .fadeout {
@@ -1019,18 +1027,6 @@ body {
   text-decoration: underline;
 }
 
-.collaborator button {
-  background-color: black;
-  border: 1px solid white;
-  color: white;
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  width: 8vh;
-  font-size: 2.5vh;
-  padding: 4px 4px 4px 4px;
-  margin-top: -2px;
-}
-
 .nameandlinks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1060,6 +1056,42 @@ body {
 .projectlink:hover {
   background-color: white;
   color: black;
+}
+
+.buttonCursor {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  width: 8vh;
+  font-size: 2.5vh;
+  padding: 4px 4px 4px 4px;
+  margin-top: -2px;
+}
+
+.buttonCursor:hover {
+  color: black;
+  background-color: white;
+}
+
+.buttonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 70vh;
 }
 
 .contact-container {

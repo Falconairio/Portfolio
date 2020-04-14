@@ -179,9 +179,9 @@ export default class Projects extends Component {
     chooseSelectOrUnselect = (project, fromButton) => {
         if(!this.state.isAnimating) {
             if(this.state.vw > 800) {
-                if(project.isSelected) {
+                if(fromButton) {
                     this.unselectProject(project)
-                } else {
+                } else if(!project.isSelected) {
                     this.selectProject(project)
                 }
             } else {
@@ -237,12 +237,16 @@ export default class Projects extends Component {
                                                             )
                                                         })
                                                     }
-                                                    <button onClick = {() => {}}>
+                                                    <button onClick = {() => {this.chooseSelectOrUnselect(project, true)}} className = "buttonCursor">
                                                         Back
                                                     </button>
                                                 </div>
                                             </div>
-                                        : null}
+                                        : <div className = "buttonWrapper">
+                                            <button onClick = {() => {this.chooseSelectOrUnselect(project, true)}} className = "buttonCursor">
+                                                Back
+                                            </button>
+                                          </div>}
                                     </div>
                                     : <footer>{project.name}</footer>
                                 }

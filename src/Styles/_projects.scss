@@ -39,7 +39,7 @@
     visibility: visible;
     opacity: 1;
     align-items: flex-end;
-    transition-property: width, height background-image background-color;
+    transition-property: width, height;
     transition: all 1s ease-in-out;
     footer {
         padding-bottom: 1vh;
@@ -106,6 +106,9 @@
     color: white;
     align-items: flex-start;
 }
+.appear:hover {
+    cursor: default;
+}
 
 .fadeout {
     opacity: 0;
@@ -168,17 +171,6 @@
     a:hover {
         text-decoration: underline;
     }
-    button {
-        background-color: black;
-        border: 1px solid white;
-        color: white;
-        border-radius: 5px;
-        font-family: 'Montserrat', sans-serif;
-        width: 8vh;
-        font-size: 2.5vh;
-        padding: 4px 4px 4px 4px;
-        margin-top: -2px;
-    }
 }
 
 .nameandlinks {
@@ -198,4 +190,27 @@
 .projectlink:hover {
     background-color: white;
     color: black;
+}
+
+.buttonCursor {
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: 8vh;
+    font-size: 2.5vh;
+    padding: 4px 4px 4px 4px;
+    margin-top: -2px;
+}
+.buttonCursor:hover {
+    color: black;
+    background-color: white;
+}
+.buttonWrapper {
+    @include flexrow;
+    @include flexcentervertical;
+    justify-content: flex-end;
+    width: 70vh;
 }

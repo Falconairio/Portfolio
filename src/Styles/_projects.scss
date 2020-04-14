@@ -39,8 +39,8 @@
     visibility: visible;
     opacity: 1;
     align-items: flex-end;
-    transition-property: width, height;
-    transition: all 0.25s ease-in-out;
+    transition-property: width, height background-image background-color;
+    transition: all 1s ease-in-out;
     footer {
         padding-bottom: 1vh;
         padding-top: 1vh;
@@ -58,13 +58,7 @@
 }
 
 .project:hover {
-    // cursor: pointer;
-    // // animation-name: projectgrow;
-    // // background-repeat: no-repeat;
-    // // animation-duration: 1s;
-    // // animation-fill-mode: forwards;
-    // height: 21vh; 
-    // width: 36vh;
+    cursor: pointer;
 }
 
 .trampoline {

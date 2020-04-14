@@ -834,10 +834,10 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-transition-property: width, height;
-  transition-property: width, height;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+  -webkit-transition-property: width, height background-image background-color;
+  transition-property: width, height background-image background-color;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .project footer {
@@ -858,6 +858,10 @@ body {
   .project {
     margin-bottom: 1vh;
   }
+}
+
+.project:hover {
+  cursor: pointer;
 }
 
 .trampoline {

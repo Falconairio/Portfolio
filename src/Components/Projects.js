@@ -5,7 +5,8 @@ export default class Projects extends Component {
         projects: [
             {
                 name: "Project Canary",
-                classes: 'canary project',
+                classes: 'project canary',
+                backgroundClass: 'canary',
                 key: 0,
                 isSelected: false,
                 info: {
@@ -31,7 +32,8 @@ export default class Projects extends Component {
             },
             {
                 name: "Petsit",
-                classes: 'petsit project',
+                classes: 'project petsit',
+                backgroundClass: 'petsit',
                 key: 1,
                 isSelected: false,
                 info: {
@@ -54,7 +56,8 @@ export default class Projects extends Component {
             },
             {
                 name: "Trampoline Time Forever",
-                classes: 'trampoline project',
+                classes: 'project trampoline',
+                backgroundClass: 'trampoline',
                 key: 2,
                 isSelected: false,
                 info: {
@@ -80,62 +83,71 @@ export default class Projects extends Component {
     selectProject = (project) => {
         this.setState({isAnimating: true})
         let projects = this.state.projects;
-        projects = projects.map((projectObj) => {
-            if(projectObj !== project) {
-                let classes = projectObj.classes.concat(" dissapear")
-                projectObj.classes = classes
-                return projectObj
-            } else {
-                let classes = projectObj.classes.concat(" appear")
-                projectObj.classes = classes
-                project.isSelected = true;
-                return projectObj
-            }
-        })
-        this.setState({ projects }, () => {
-            setTimeout(() => {
-                projects = projects.map((projectObj) => {
-                    if(projectObj !== project) {
-                        let classes = projectObj.classes.concat(" destroy")
-                        projectObj.classes = classes
-                        return projectObj
-                    } else return projectObj
-                })
-                this.setState({ projects }, () => {
-                    projects = projects.map((projectObj) => {
-                        if(projectObj === project) {
-                            let classes = projectObj.info.classes.slice(0, projectObj.classes.indexOf("fadeout"))
-                            projectObj.info.classes = classes
-                            return projectObj
-                        } else return projectObj
-                    })
-                    this.setState({ projects, isAnimating: false })
-                })
-            }, 250)
-        })
+
+        setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj !== project) {
+                    let classes = projectObj.classes.concat(" dissapear")
+                    projectObj.classes = classes
+                    return projectObj
+                } else {
+                    let classes = projectObj.classes.slice(0, projectObj.classes.indexOf(projectObj.backgroundClass)).concat(" appear")
+                    projectObj.classes = classes
+                    project.isSelected = true;
+                    return projectObj
+                }
+            })
+            this.setState({ projects })
+        }, 100)
+
+        setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj !== project) {
+                    let classes = projectObj.classes.concat(" destroy")
+                    projectObj.classes = classes
+                    return projectObj
+                } else return projectObj
+            })
+            this.setState({ projects })
+        }, 500)
+
+        setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj === project) {
+                    let classes = projectObj.info.classes.slice(0, projectObj.classes.indexOf("fadeout"))
+                    projectObj.info.classes = classes
+                    return projectObj
+                } else return projectObj
+            })
+            this.setState({ projects, isAnimating: false })
+        }, 1000)
     }
 
     unselectProject = (project) => {
         this.setState({ isAnimating: true })
         let projects = this.state.projects;
+
+        setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj === project) {
+                    let classes = projectObj.info.classes.concat(" fadeout")
+                    projectObj.info.classes = classes
+                    return projectObj
+                } else return projectObj
+            })
+            this.setState({ projects })}, 100)
         
-        projects = projects.map((projectObj) => {
-            if(projectObj === project) {
-                let classes = projectObj.info.classes.concat(" fadeout")
-                projectObj.info.classes = classes
-                return projectObj
-            } else return projectObj
-        })
-        this.setState({ projects }, () => {
-            setTimeout(() => {
+        setTimeout(() => {
             projects = projects.map((projectObj) => {
                 if(projectObj !== project) {
                     let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("destroy"))
                     projectObj.classes = classes
                     return projectObj
                 } else return projectObj
-        })
-        this.setState({ projects }, () => {
+            })
+            this.setState({ projects })},500)
+    
+        setTimeout(() => {
             projects = projects.map((projectObj) => {
                 if(projectObj !== project) {
                     let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("dissapear"))
@@ -144,12 +156,25 @@ export default class Projects extends Component {
                 } else {
                     let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("appear"))
                     projectObj.classes = classes
+                    return projectObj
+                }
+            })
+            this.setState({ projects })}, 1000)
+
+        setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj !== project) {
+                    return projectObj
+                } else {
+                    let classes = projectObj.classes.concat(` ${projectObj.backgroundClass}`)
+                    projectObj.classes = classes
                     project.isSelected = false;
                     return projectObj
                 }
             })
             this.setState({ projects, isAnimating: false })
-        })}, 700)})}
+        }, 2000)
+        }
 
     chooseSelectOrUnselect = (project, fromButton) => {
         if(!this.state.isAnimating) {

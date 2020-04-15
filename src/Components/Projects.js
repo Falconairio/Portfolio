@@ -6,6 +6,7 @@ export default class Projects extends Component {
             {
                 name: "Project Canary",
                 classes: 'project canary',
+                footerclasses: "",
                 backgroundClass: 'canary',
                 key: 0,
                 isSelected: false,
@@ -33,6 +34,7 @@ export default class Projects extends Component {
             {
                 name: "Petsit",
                 classes: 'project petsit',
+                footerclasses: "",
                 backgroundClass: 'petsit',
                 key: 1,
                 isSelected: false,
@@ -57,6 +59,7 @@ export default class Projects extends Component {
             {
                 name: "Trampoline Time Forever",
                 classes: 'project trampoline',
+                footerclasses: "",
                 backgroundClass: 'trampoline',
                 key: 2,
                 isSelected: false,
@@ -88,11 +91,15 @@ export default class Projects extends Component {
             projects = projects.map((projectObj) => {
                 if(projectObj !== project) {
                     let classes = projectObj.classes.concat(" blackbg")
+                    let footerclasses = projectObj.footerclasses.concat("destroy")
                     projectObj.classes = classes
+                    projectObj.footerclasses = footerclasses
                     return projectObj
                 } else {
                     let classes = projectObj.classes.concat(" blackbg")
+                    let footerclasses = projectObj.footerclasses.concat("destroy")
                     projectObj.classes = classes
+                    projectObj.footerclasses = footerclasses
                     project.isSelected = true;
                     return projectObj
                 }
@@ -107,7 +114,7 @@ export default class Projects extends Component {
                     projectObj.classes = classes
                     return projectObj
                 } else {
-                    let classes = projectObj.classes.slice(0, projectObj.classes.indexOf(projectObj.backgroundClass)).concat(" appear")
+                    let classes = projectObj.classes.concat(" appear")
                     projectObj.classes = classes
                     project.isSelected = true;
                     return projectObj
@@ -118,14 +125,14 @@ export default class Projects extends Component {
 
         setTimeout(() => {
             projects = projects.map((projectObj) => {
-                if(projectObj !== project) {
-                    let classes = projectObj.classes.concat(" destroy")
+                if(projectObj === project) {
+                    let classes = projectObj.classes.concat(" moveright")
                     projectObj.classes = classes
                     return projectObj
                 } else return projectObj
             })
             this.setState({ projects })
-        }, 500)
+        }, 1100)
 
         setTimeout(() => {
             projects = projects.map((projectObj) => {
@@ -136,7 +143,7 @@ export default class Projects extends Component {
                 } else return projectObj
             })
             this.setState({ projects, isAnimating: false })
-        }, 1000)
+        }, 2000)
     }
 
     unselectProject = (project) => {
@@ -196,10 +203,12 @@ export default class Projects extends Component {
                 if(projectObj !== project) {
                     let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("blackbg"))
                     projectObj.classes = classes;
+                    projectObj.footerclasses = "";
                     return projectObj
                 } else {
-                    let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("blackbg")).concat(` ${projectObj.backgroundClass}`)
+                    let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("blackbg"))
                     projectObj.classes = classes
+                    projectObj.footerclasses = "";
                     project.isSelected = false;
                     return projectObj
                 }
@@ -280,7 +289,7 @@ export default class Projects extends Component {
                                             </button>
                                           </div>}
                                     </div>
-                                    : <footer>{project.name}</footer>
+                                    : <footer className = {project.footerclasses}>{project.name}</footer>
                                 }
                             </div>)
                     })}

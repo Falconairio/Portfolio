@@ -1105,6 +1105,10 @@ body {
   width: 70vh;
 }
 
+.moveright {
+  margin-right: -25vh;
+}
+
 .contact-container {
   margin-top: 15vh;
   height: 70vh;

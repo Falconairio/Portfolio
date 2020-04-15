@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class Projects extends Component {
     state = {
+        divclass: "scroll",
         projects: [
             {
                 name: "Project Canary",
@@ -125,13 +126,13 @@ export default class Projects extends Component {
 
         setTimeout(() => {
             projects = projects.map((projectObj) => {
-                if(projectObj === project) {
-                    let classes = projectObj.classes.concat(" moveright")
+                if(projectObj !== project) {
+                    let classes = projectObj.classes.concat(" destroy")
                     projectObj.classes = classes
                     return projectObj
                 } else return projectObj
             })
-            this.setState({ projects })
+            this.setState({ projects, divclass: "" })
         }, 1100)
 
         setTimeout(() => {
@@ -143,7 +144,7 @@ export default class Projects extends Component {
                 } else return projectObj
             })
             this.setState({ projects, isAnimating: false })
-        }, 2000)
+        }, 1500)
     }
 
     unselectProject = (project) => {
@@ -168,7 +169,7 @@ export default class Projects extends Component {
                     return projectObj
                 } else return projectObj
             })
-            this.setState({ projects })},500)
+            this.setState({ projects, divclass: "scroll" })},1000)
     
         setTimeout(() => {
             projects = projects.map((projectObj) => {
@@ -182,7 +183,7 @@ export default class Projects extends Component {
                     return projectObj
                 }
             })
-            this.setState({ projects })}, 1000)
+            this.setState({ projects })}, 1500)
 
         setTimeout(() => {
             projects = projects.map((projectObj) => {
@@ -235,6 +236,7 @@ export default class Projects extends Component {
         return (
             <div id = 'projects' className = 'projects-container'>
                 <h1>Projects</h1>
+                <div className = {this.state.divclass}>
                 <div className = "projects">
                     {this.state.projects.map((project) => {
                         return(
@@ -293,6 +295,7 @@ export default class Projects extends Component {
                                 }
                             </div>)
                     })}
+                </div>
                 </div>
             </div>
         )

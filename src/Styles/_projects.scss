@@ -22,6 +22,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     overflow-y: scroll;
+    overflow-x: hidden;
     @include desktop {
         width: 59vw;
     }
@@ -84,6 +85,16 @@
     color: black;
     font-weight: bolder;
     background-color: white;
+}
+
+.blackbg {
+    background-image: url("/images/black.png");
+    background-position: top center;
+    background-size: 30vh;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bolder;
+    background-color: black;
 }
 
 .dissapear {

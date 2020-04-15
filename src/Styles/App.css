@@ -810,6 +810,7 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @media (min-width: 800px) {
@@ -893,6 +894,16 @@ body {
   color: black;
   font-weight: bolder;
   background-color: white;
+}
+
+.blackbg {
+  background-image: url("/images/black.png");
+  background-position: top center;
+  background-size: 30vh;
+  background-repeat: no-repeat;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bolder;
+  background-color: black;
 }
 
 .dissapear {

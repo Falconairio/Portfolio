@@ -87,6 +87,22 @@ export default class Projects extends Component {
         setTimeout(() => {
             projects = projects.map((projectObj) => {
                 if(projectObj !== project) {
+                    let classes = projectObj.classes.concat(" blackbg")
+                    projectObj.classes = classes
+                    return projectObj
+                } else {
+                    let classes = projectObj.classes.concat(" blackbg")
+                    projectObj.classes = classes
+                    project.isSelected = true;
+                    return projectObj
+                }
+            })
+            this.setState({ projects })
+        })
+
+        setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj !== project) {
                     let classes = projectObj.classes.concat(" dissapear")
                     projectObj.classes = classes
                     return projectObj
@@ -166,14 +182,30 @@ export default class Projects extends Component {
                 if(projectObj !== project) {
                     return projectObj
                 } else {
-                    let classes = projectObj.classes.concat(` ${projectObj.backgroundClass}`)
+                    let classes = projectObj.classes.concat(` blackbg`)
+                    projectObj.classes = classes
+                    project.isSelected = false;
+                    return projectObj
+                }
+            })
+            this.setState({ projects })
+        }, 2000)
+
+        setTimeout(() => {
+            projects = projects.map((projectObj) => {
+                if(projectObj !== project) {
+                    let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("blackbg"))
+                    projectObj.classes = classes;
+                    return projectObj
+                } else {
+                    let classes = projectObj.classes.slice(0, projectObj.classes.indexOf("blackbg")).concat(` ${projectObj.backgroundClass}`)
                     projectObj.classes = classes
                     project.isSelected = false;
                     return projectObj
                 }
             })
             this.setState({ projects, isAnimating: false })
-        }, 2000)
+        }, 2200)
         }
 
     chooseSelectOrUnselect = (project, fromButton) => {

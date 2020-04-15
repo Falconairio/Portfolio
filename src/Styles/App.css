@@ -804,6 +804,13 @@ body {
   }
 }
 
+@media (max-width: 800px) {
+  .scroll {
+    overflow-y: auto;
+    height: 52vh;
+  }
+}
+
 .scroll::-webkit-scrollbar {
   display: none;
 }
@@ -818,7 +825,6 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  overflow-y: scroll;
 }
 
 @media (min-width: 800px) {
@@ -922,8 +928,32 @@ body {
   border: 0;
 }
 
+.h1dissapear {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.h1appear {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+
 .destroy {
   display: none;
+}
+
+.appear.petsit {
+  height: 57vh;
+}
+
+.appear.canary {
+  height: 62vh;
+}
+
+.appear.trampoline {
+  height: 55vh;
 }
 
 .appear {
@@ -931,8 +961,7 @@ body {
   background-color: black;
   margin-right: 0;
   margin-bottom: 0;
-  width: 80vh;
-  height: 60vh;
+  width: 78vh;
   color: white;
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -1115,8 +1144,59 @@ body {
   width: 70vh;
 }
 
-.moveright {
-  margin-right: -25vh;
+.projectsmodal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 51vh;
+  height: 90vh;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  right: 5vw;
+  top: 12vw;
+}
+
+.projectsmodal hr {
+  width: 35vh;
+  margin-top: 4vh;
+}
+
+.projectsmodal p {
+  width: 38vh;
+  margin-top: 1.5vh;
+}
+
+.projectsmodal a {
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+}
+
+.projectlinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 35vh;
 }
 
 .contact-container {

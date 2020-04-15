@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 export default class Projects extends Component {
     state = {
         divclass: "scroll",
+        h1class: "h1appear",
         projects: [
             {
                 name: "Project Canary",
@@ -52,7 +53,7 @@ export default class Projects extends Component {
                     }],
                     collaborators: [{
                         name: "Frederic Vannier",
-                        link: "https://github.com/Fred011"
+                        link: "https://frederic-vannier.firebaseapp.com/"
                     }],
                     classes: "projectdetails fadeout"
                 }
@@ -65,7 +66,7 @@ export default class Projects extends Component {
                 key: 2,
                 isSelected: false,
                 info: {
-                    description: "Pong style game made for Ironhack's modele 1 project week",
+                    description: "Pong style game made for Ironhack's module 1 project week",
                     technologies: ["Canvas","HTML","CSS","Javascript"],
                     features: ["Play by keeping the ball from touching the bottom of the screen using a trampoline that you draw with your mouse","Select from multiple difficulties","Enter name to be put on the leaderboard", "Unlock secrets based on name entered"],
                     links: [{
@@ -79,8 +80,8 @@ export default class Projects extends Component {
                 }
             }
         ],
-        vw:  Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-        vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+        projectViewing: null,
+        isMobile: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 800,
         isAnimating: false
     }
 
@@ -105,7 +106,7 @@ export default class Projects extends Component {
                     return projectObj
                 }
             })
-            this.setState({ projects })
+            this.setState({ projects, h1class: "h1dissapear" })
         })
 
         setTimeout(() => {
@@ -214,20 +215,36 @@ export default class Projects extends Component {
                     return projectObj
                 }
             })
-            this.setState({ projects, isAnimating: false })
+            this.setState({ projects, isAnimating: false, h1class: "h1appear" })
         }, 2200)
         }
 
+    renderModal = (project) => {
+        return (
+            <div className = "projectsmodal" onClick = {() => this.setState({ projectViewing: null })}>
+                <h1>{project.name}</h1>
+                <div className = "projectlinks">
+                    {project.info.links.map((link) => {
+                        return (<a href = {link.link} className = "">{link.name}</a>)
+                    })}
+                </div>
+                <hr />
+                <p>{project.info.description}</p>
+                <hr />
+            </div>
+        )
+    }
+
     chooseSelectOrUnselect = (project, fromButton) => {
         if(!this.state.isAnimating) {
-            if(this.state.vw > 800) {
+            if(!this.state.isMobile) {
                 if(fromButton) {
                     this.unselectProject(project)
                 } else if(!project.isSelected) {
                     this.selectProject(project)
                 }
             } else {
-                this.renderModal(project)
+                this.setState({ projectViewing: project })
             }
         }
     }
@@ -235,14 +252,14 @@ export default class Projects extends Component {
     render() {
         return (
             <div id = 'projects' className = 'projects-container'>
-                <h1>Projects</h1>
+                <h1 className = {this.state.h1class}>Projects</h1>
                 <div className = {this.state.divclass}>
                 <div className = "projects">
                     {this.state.projects.map((project) => {
                         return(
                             <div className = {project.classes}
                             onClick = {() => {this.chooseSelectOrUnselect(project)}}>
-                                {project.isSelected ? 
+                                {project.isSelected && !this.state.isMobile ? 
                                     <div className = {project.info.classes}>
                                         <div className = "nameandlinks">
                                             <h2>{project.name}</h2>
@@ -297,6 +314,7 @@ export default class Projects extends Component {
                     })}
                 </div>
                 </div>
+                    {this.state.projectViewing ? this.renderModal(this.state.projectViewing) : null}
             </div>
         )
     }

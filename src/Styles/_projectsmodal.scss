@@ -1,0 +1,35 @@
+.projectsmodal {
+    @include flexcolumn;
+    @include flexcentervertical;
+    width: 51vh;
+    height: 90vh;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    right: 5vw;
+    top: 12vw;
+
+    hr {
+        width: 35vh;
+        margin-top: 4vh;
+    }
+
+    p {
+        width: 38vh;
+        margin-top: 1.5vh;
+    }
+    a {
+        text-decoration: none;
+        border: 1px solid white;
+        padding: 5px 5px 5px 5px;
+        border-radius: 5px;
+    }
+}
+.projectlinks {
+    @include flexrow;
+    justify-content: space-evenly;
+    width: 35vh;
+}

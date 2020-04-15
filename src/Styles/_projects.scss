@@ -23,15 +23,19 @@
         overflow-x: auto;
         width: 70vw;
     }
+    @include mobile {
+        overflow-y: auto;
+        height: 52vh;
+    }
 }
 .scroll::-webkit-scrollbar {
 	display: none;
   }
+
 .projects {
     // @include flexrow;
     @include flexcenterhorizontal;
     justify-content: space-evenly;
-    overflow-y: scroll;
     @include desktop {
         width: 80vw;
     }
@@ -113,8 +117,29 @@
     border: 0;
 }
 
+.h1dissapear {
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+.h1appear {
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+}
+
 .destroy {
     display: none;
+}
+
+.appear.petsit {
+    height: 57vh;
+}
+
+.appear.canary {
+    height: 62vh;
+}
+
+.appear.trampoline {
+    height: 55vh;
 }
 
 .appear {
@@ -122,8 +147,7 @@
     background-color: black;
     margin-right: 0;
     margin-bottom: 0;
-    width: 80vh;
-    height: 60vh;
+    width: 78vh;
     color: white;
     align-items: flex-start;
 }
@@ -234,7 +258,4 @@
     @include flexcentervertical;
     justify-content: flex-end;
     width: 70vh;
-}
-.moveright {
-    margin-right: -25vh;
 }

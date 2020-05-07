@@ -3,6 +3,7 @@
     @include flexcenterabsolute;
     @include flexcolumn;
     @include portfolioitemspacing;
+    text-align: center;
     h1 {
         margin-bottom: 4vh;
         animation-name: welcometext;
@@ -12,7 +13,12 @@
         opacity: 1;
     }
     h1:hover {
+        transition-property: width height;
+        transition: all 0.2s ease-in-out;
         cursor: pointer;
+        @include desktop {
+            font-size: 11.2vh;
+        }
     }
     p:first-of-type {
         animation-name: welcometext;

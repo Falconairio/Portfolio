@@ -97,6 +97,10 @@
     }
 }
 
+.linkcontainer {
+    height: 1.5vw;
+}
+
 .navigation-options {
     ul {
         @include flexcolumn;
@@ -108,10 +112,8 @@
         font-size: 1.3vw;
     }
     .navLink:hover {
-        border: 2px solid white;
-        border-radius: 3px;
-        padding: 5px;
-        font-size: 1.6vw;
+        text-decoration: underline;
+        font-size: 1.5vw;
         cursor: pointer;
     }
 }

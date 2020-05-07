@@ -82,7 +82,9 @@ export default class Projects extends Component {
         ],
         projectViewing: null,
         isMobile: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 800,
-        isAnimating: false
+        isAnimating: false,
+        isViewingTechnologies: true,
+        modalClasses: "projectsmodal"
     }
 
     selectProject = (project) => {
@@ -218,10 +220,16 @@ export default class Projects extends Component {
             this.setState({ projects, isAnimating: false, h1class: "h1appear" })
         }, 2200)
         }
+    unselectModal = () => {
+        this.setState({ modalClasses: "projectsmodal fadeoutmodal" })
+        setTimeout(() => {
+            this.setState({ projectViewing: null})
+        }, 500)
+    }
 
     renderModal = (project) => {
         return (
-            <div className = "projectsmodal" onClick = {() => this.setState({ projectViewing: null })}>
+            <div className = {this.state.modalClasses}>
                 <h1>{project.name}</h1>
                 <div className = "projectlinks">
                     {project.info.links.map((link) => {
@@ -231,6 +239,58 @@ export default class Projects extends Component {
                 <hr />
                 <p>{project.info.description}</p>
                 <hr />
+                <div className = 'featuresandtechnologiesmobile'>
+                    {this.state.isViewingTechnologies ?
+                    <div className = 'technologiesmobile'>
+                        <div>
+                            <h3>Technologies</h3>
+                            <ul>
+                                {project.info.technologies.map((tech) => {
+                                    return(<li>{tech}</li>)})}
+                            </ul>
+                        </div>
+                        <img src = './images/arrow-right-circle.svg' alt="" 
+                            onClick = {() => {
+                                this.setState({isViewingTechnologies: false})
+                            }}
+                        />
+                    </div>
+                    : 
+                    <div className ='technologiesmobile'>
+                        <img src = './images/arrow-left-circle.svg' alt="" 
+                            onClick = { () => {
+                                this.setState({ isViewingTechnologies: true })
+                            }}
+                        />
+                        <div>
+                            <h3>Features</h3>
+                            <ul>
+                                {project.info.features.map((feature) => {
+                                        return(<li>{feature}</li>)})}
+                            </ul>
+                        </div>
+                        </div>}
+                </div>
+                {project.info.collaborators ?
+                <div>
+                <hr />
+                    <h3 className = 'modalcollaboratorheader'>Made in collaboration with:</h3>
+                        <div className = "collaboratormobile">
+                            {
+                                project.info.collaborators.map((ref) => {
+                                    return(
+                                        <a href = {ref.link}>{ref.name}</a>
+                                    )
+                                })
+                            }
+                        </div>
+                </div> :null }
+                <hr />
+                <div className = "buttonwrappermobile">
+                    <button onClick = {() => {this.unselectModal()}} className = "buttonCursor">
+                        Back
+                    </button>
+                </div>
             </div>
         )
     }
@@ -244,7 +304,7 @@ export default class Projects extends Component {
                     this.selectProject(project)
                 }
             } else {
-                this.setState({ projectViewing: project })
+                this.setState({ projectViewing: project, modalClasses: "projectsmodal" })
             }
         }
     }

@@ -5,6 +5,8 @@
     @include flexcenterabsolute;
     justify-content: space-evenly;
     margin-bottom: 15vh;
+    // animation-name: fadein;
+    // animation-duration: 1s;
     img:hover {
         cursor: pointer;
     }
@@ -43,7 +45,19 @@
     margin-right: 1.5vh;
     margin-left: 1.5vh;
 }
+.gmailwrapper {
+    @include mobile {
+        width: 8.5vh;
+        height: 8.5vh;
+    }
+    @include desktop {
+        width: 9.5vh;
+        height: 9.5vh;
+    }
+}
 .gmailicon {
+    transition: all 0.2s ease-in-out;
+    transition-property: width height;
     @include mobile {
         width: 8vh;
         height: 8vh;
@@ -53,7 +67,29 @@
         height: 9vh;
     }
 }
+.gmailicon:hover {
+    @include mobile {
+        width: 8.5vh;
+        height: 8.5vh;
+    }
+    @include desktop {
+        width: 9.5vh;
+        height: 9.5vh;
+    }
+}
+.githubwrapper {
+    @include mobile {
+        width: 10.5vh;
+        height: 10.5vh;
+    }
+    @include desktop {
+        width: 12.5vh;
+        height: 12.5vh;
+    }
+}
 .githubicon {
+    transition: all 0.2s ease-in-out;
+    transition-property: width height;
     @include mobile {
         width: 10vh;
         height: 10vh;
@@ -63,7 +99,29 @@
         height: 12vh;
     }
 }
+.githubicon:hover {
+    @include mobile {
+        width: 10.5vh;
+        height: 10.5vh;
+    }
+    @include desktop {
+        width: 12.5vh;
+        height: 12.5vh;
+    }
+}
+.linkedinwrapper {
+    @include mobile {
+        width: 7.5vh;
+        height: 7.5vh;
+    }
+    @include desktop {
+        width: 8.5vh;
+        height: 8.5vh;
+    }
+}
 .linkedinIcon {
+    transition: all 0.2s ease-in-out;
+    transition-property: width height;
     @include mobile {
         width: 7vh;
         height: 7vh;
@@ -71,5 +129,15 @@
     @include desktop {
         width: 8vh;
         height: 8vh;
+    }
+}
+.linkedinIcon:hover {
+    @include mobile {
+        width: 7.5vh;
+        height: 7.5vh;
+    }
+    @include desktop {
+        width: 8.5vh;
+        height: 8.5vh;
     }
 }

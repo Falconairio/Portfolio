@@ -24,6 +24,7 @@
         width: 70vw;
     }
     @include mobile {
+        // border: 1px solid white;
         overflow-y: auto;
         height: 52vh;
     }

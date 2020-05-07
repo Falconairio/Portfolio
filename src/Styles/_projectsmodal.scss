@@ -1,6 +1,8 @@
 .projectsmodal {
     @include flexcolumn;
     @include flexcentervertical;
+    align-items: center;
+    justify-content: center;
     width: 51vh;
     height: 90vh;
     text-align: center;
@@ -9,14 +11,24 @@
     background-color: black;
     color: white;
     position: fixed;
-    right: 5vw;
+    // right: 5vw;
+    animation-name: fadein;
+    animation-duration: 0.5s;
     top: 12vw;
 
     hr {
         width: 35vh;
-        margin-top: 4vh;
+        // margin-top: 4vh;
     }
-
+    h1 {
+        margin-top: 0;
+    }
+    ul {
+        list-style: square;
+    }
+    li {
+        margin-bottom: 0.4vh;
+    }
     p {
         width: 38vh;
         margin-top: 1.5vh;
@@ -28,8 +40,44 @@
         border-radius: 5px;
     }
 }
+.featuresandtechnologiesmobile {
+    height: 40vh;
+    @include flexcentervertical;
+    @include flexcenterhorizontal;
+        h3 {
+        font-size: 2.5vh;
+        margin-bottom: 1vh;
+        text-decoration: underline;
+    }
+}
+.modalcollaboratorheader {
+    margin-bottom: 1vh;
+}
+.collaboratormobile {
+    @include flexcenterhorizontal;
+    a {
+        font-size: 3vh;
+    }
+}
 .projectlinks {
     @include flexrow;
     justify-content: space-evenly;
     width: 35vh;
+}
+.technologiesmobile {
+    @include flexrow;
+    @include flexcenterhorizontal;
+    justify-content: space-evenly;
+    width: 50vh;
+    ul {
+        width: 25vh;
+    }
+}
+.buttonwrappermobile {
+    margin-top: 1vh;
+}
+.fadeoutmodal {
+    animation-name: fadeout;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }

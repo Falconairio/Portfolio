@@ -68,43 +68,51 @@ export default class SideNavbar extends Component {
                     <div className = 'navigation-options'>
                     <hr/>
                         <ul>
-                        <Link 
-                            className="navLink"
-                            activeClass="active"
-                            to="about"
-                            spy={true}
-                            smooth={true}
-                            offset={-105}
-                            duration= {400}
-                        >About</Link>
-                        <Link 
-                            className="navLink"
-                            activeClass="active"
-                            to="projects"
-                            spy={true}
-                            smooth={true}
-                            delay={-10}
-                            offset={-105}
-                            duration= {400}
-                        >Projects</Link>
-                        <Link 
-                            className="navLink"
-                            activeClass="active"
-                            to="jobs"
-                            spy={true}
-                            smooth={true}
-                            offset={-105}
-                            duration= {400}
-                        >Jobs</Link>
-                        <Link 
-                            className="navLink"
-                            activeClass="active"
-                            to="contact"
-                            spy={true}
-                            smooth={true}
-                            offset={-105}
-                            duration= {400}
-                        >Contact</Link>
+                        <div className = 'linkcontainer'>
+                            <Link 
+                                className="navLink"
+                                activeClass="active"
+                                to="about"
+                                spy={true}
+                                smooth={true}
+                                offset={-105}
+                                duration= {400}
+                            >About</Link>
+                        </div>
+                        <div className = 'linkcontainer'>
+                            <Link 
+                                className="navLink"
+                                activeClass="active"
+                                to="projects"
+                                spy={true}
+                                smooth={true}
+                                delay={-10}
+                                offset={-105}
+                                duration= {400}
+                            >Projects</Link>
+                        </div>
+                        <div className = 'linkcontainer'>
+                            <Link 
+                                className="navLink"
+                                activeClass="active"
+                                to="jobs"
+                                spy={true}
+                                smooth={true}
+                                offset={-105}
+                                duration= {400}
+                            >Jobs</Link>
+                        </div>
+                        <div className = 'linkcontainer'>
+                            <Link 
+                                className="navLink"
+                                activeClass="active"
+                                to="contact"
+                                spy={true}
+                                smooth={true}
+                                offset={-105}
+                                duration= {400}
+                            >Contact</Link>
+                        </div>
                         </ul>
                     </div>
                 </div>

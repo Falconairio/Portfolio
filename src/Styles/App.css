@@ -150,6 +150,18 @@ button:focus {
   }
 }
 
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+}
+
 @-webkit-keyframes zoomin {
   50% {
     background-size: 300px 440px;
@@ -389,7 +401,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 1.5vw;
 }
 
 @media (min-width: 800px) {
@@ -562,6 +573,10 @@ body {
   font-size: 1.5vw;
 }
 
+.linkcontainer {
+  height: 1.5vw;
+}
+
 .navigation-options ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -585,10 +600,8 @@ body {
 }
 
 .navigation-options .navLink:hover {
-  border: 2px solid white;
-  border-radius: 3px;
-  padding: 5px;
-  font-size: 1.6vw;
+  text-decoration: underline;
+  font-size: 1.5vw;
   cursor: pointer;
 }
 
@@ -611,6 +624,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    z-index: 2;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
@@ -619,7 +633,7 @@ body {
     height: 5vh;
     background-color: black;
     font-weight: bolder;
-    top: 0;
+    top: -1px;
     position: fixed;
   }
   .topnav-container vr {
@@ -645,6 +659,7 @@ body {
           flex-direction: column;
   margin-top: 15vh;
   height: 70vh;
+  text-align: center;
 }
 
 .welcome-container h1 {
@@ -661,7 +676,17 @@ body {
 }
 
 .welcome-container h1:hover {
+  -webkit-transition-property: width height;
+  transition-property: width height;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .welcome-container h1:hover {
+    font-size: 11.2vh;
+  }
 }
 
 .welcome-container p:first-of-type {
@@ -1156,6 +1181,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 51vh;
   height: 90vh;
   text-align: center;
@@ -1164,13 +1193,27 @@ body {
   background-color: black;
   color: white;
   position: fixed;
-  right: 5vw;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   top: 12vw;
 }
 
 .projectsmodal hr {
   width: 35vh;
-  margin-top: 4vh;
+}
+
+.projectsmodal h1 {
+  margin-top: 0;
+}
+
+.projectsmodal ul {
+  list-style: square;
+}
+
+.projectsmodal li {
+  margin-bottom: 0.4vh;
 }
 
 .projectsmodal p {
@@ -1185,6 +1228,43 @@ body {
   border-radius: 5px;
 }
 
+.featuresandtechnologiesmobile {
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.featuresandtechnologiesmobile h3 {
+  font-size: 2.5vh;
+  margin-bottom: 1vh;
+  text-decoration: underline;
+}
+
+.modalcollaboratorheader {
+  margin-bottom: 1vh;
+}
+
+.collaboratormobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.collaboratormobile a {
+  font-size: 3vh;
+}
+
 .projectlinks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1197,6 +1277,41 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 35vh;
+}
+
+.technologiesmobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 50vh;
+}
+
+.technologiesmobile ul {
+  width: 25vh;
+}
+
+.buttonwrappermobile {
+  margin-top: 1vh;
+}
+
+.fadeoutmodal {
+  -webkit-animation-name: fadeout;
+          animation-name: fadeout;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .contact-container {
@@ -1292,6 +1407,27 @@ body {
 }
 
 @media (max-width: 800px) {
+  .gmailwrapper {
+    width: 8.5vh;
+    height: 8.5vh;
+  }
+}
+
+@media (min-width: 800px) {
+  .gmailwrapper {
+    width: 9.5vh;
+    height: 9.5vh;
+  }
+}
+
+.gmailicon {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition-property: width height;
+  transition-property: width height;
+}
+
+@media (max-width: 800px) {
   .gmailicon {
     width: 8vh;
     height: 8vh;
@@ -1303,6 +1439,41 @@ body {
     width: 9vh;
     height: 9vh;
   }
+}
+
+@media (max-width: 800px) {
+  .gmailicon:hover {
+    width: 8.5vh;
+    height: 8.5vh;
+  }
+}
+
+@media (min-width: 800px) {
+  .gmailicon:hover {
+    width: 9.5vh;
+    height: 9.5vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .githubwrapper {
+    width: 10.5vh;
+    height: 10.5vh;
+  }
+}
+
+@media (min-width: 800px) {
+  .githubwrapper {
+    width: 12.5vh;
+    height: 12.5vh;
+  }
+}
+
+.githubicon {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition-property: width height;
+  transition-property: width height;
 }
 
 @media (max-width: 800px) {
@@ -1320,6 +1491,41 @@ body {
 }
 
 @media (max-width: 800px) {
+  .githubicon:hover {
+    width: 10.5vh;
+    height: 10.5vh;
+  }
+}
+
+@media (min-width: 800px) {
+  .githubicon:hover {
+    width: 12.5vh;
+    height: 12.5vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .linkedinwrapper {
+    width: 7.5vh;
+    height: 7.5vh;
+  }
+}
+
+@media (min-width: 800px) {
+  .linkedinwrapper {
+    width: 8.5vh;
+    height: 8.5vh;
+  }
+}
+
+.linkedinIcon {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition-property: width height;
+  transition-property: width height;
+}
+
+@media (max-width: 800px) {
   .linkedinIcon {
     width: 7vh;
     height: 7vh;
@@ -1330,6 +1536,20 @@ body {
   .linkedinIcon {
     width: 8vh;
     height: 8vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .linkedinIcon:hover {
+    width: 7.5vh;
+    height: 7.5vh;
+  }
+}
+
+@media (min-width: 800px) {
+  .linkedinIcon:hover {
+    width: 8.5vh;
+    height: 8.5vh;
   }
 }
 /*# sourceMappingURL=App.css.map */

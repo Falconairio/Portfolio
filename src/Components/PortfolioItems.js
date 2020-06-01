@@ -3,7 +3,6 @@ import Welcome from './Welcome'
 import About from './About'
 import Projects from './Projects'
 import Contact from './Contact'
-import Jobs from './Jobs'
 
 export default class PortfolioItems extends Component {
     render() {
@@ -12,7 +11,7 @@ export default class PortfolioItems extends Component {
                 <Welcome/>
                 <About/>
                 <Projects/>
-                <Jobs/>
+                {/* <Jobs/> */}
                 <Contact/>
             </div>
         )

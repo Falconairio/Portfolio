@@ -86,12 +86,11 @@ export default class SideNavbar extends Component {
                                 to="projects"
                                 spy={true}
                                 smooth={true}
-                                delay={-10}
                                 offset={-105}
                                 duration= {400}
                             >Projects</Link>
                         </div>
-                        <div className = 'linkcontainer'>
+                        {/* <div className = 'linkcontainer'>
                             <Link 
                                 className="navLink"
                                 activeClass="active"
@@ -101,7 +100,7 @@ export default class SideNavbar extends Component {
                                 offset={-105}
                                 duration= {400}
                             >Jobs</Link>
-                        </div>
+                        </div> */}
                         <div className = 'linkcontainer'>
                             <Link 
                                 className="navLink"

@@ -466,7 +466,7 @@ body {
   background-position: top center;
   background-size: 13.5vw 19vw;
   border: 3px solid white;
-  border-radius: 100px;
+  border-radius: 1000px;
   height: 12.5vw;
   width: 12.5vw;
 }
@@ -970,15 +970,15 @@ body {
 }
 
 .appear.petsit {
-  height: 57vh;
+  height: 415px;
 }
 
 .appear.canary {
-  height: 62vh;
+  height: 450px;
 }
 
 .appear.trampoline {
-  height: 55vh;
+  height: 400px;
 }
 
 .appear {
@@ -986,7 +986,7 @@ body {
   background-color: black;
   margin-right: 0;
   margin-bottom: 0;
-  width: 78vh;
+  width: 565px;
   color: white;
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -1406,13 +1406,6 @@ body {
   margin-left: 1.5vh;
 }
 
-@media (max-width: 800px) {
-  .gmailwrapper {
-    width: 8.5vh;
-    height: 8.5vh;
-  }
-}
-
 @media (min-width: 800px) {
   .gmailwrapper {
     width: 9.5vh;
@@ -1441,24 +1434,10 @@ body {
   }
 }
 
-@media (max-width: 800px) {
-  .gmailicon:hover {
-    width: 8.5vh;
-    height: 8.5vh;
-  }
-}
-
 @media (min-width: 800px) {
   .gmailicon:hover {
     width: 9.5vh;
     height: 9.5vh;
-  }
-}
-
-@media (max-width: 800px) {
-  .githubwrapper {
-    width: 10.5vh;
-    height: 10.5vh;
   }
 }
 
@@ -1490,24 +1469,10 @@ body {
   }
 }
 
-@media (max-width: 800px) {
-  .githubicon:hover {
-    width: 10.5vh;
-    height: 10.5vh;
-  }
-}
-
 @media (min-width: 800px) {
   .githubicon:hover {
     width: 12.5vh;
     height: 12.5vh;
-  }
-}
-
-@media (max-width: 800px) {
-  .linkedinwrapper {
-    width: 7.5vh;
-    height: 7.5vh;
   }
 }
 
@@ -1536,13 +1501,6 @@ body {
   .linkedinIcon {
     width: 8vh;
     height: 8vh;
-  }
-}
-
-@media (max-width: 800px) {
-  .linkedinIcon:hover {
-    width: 7.5vh;
-    height: 7.5vh;
   }
 }
 

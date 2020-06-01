@@ -46,10 +46,6 @@
     margin-left: 1.5vh;
 }
 .gmailwrapper {
-    @include mobile {
-        width: 8.5vh;
-        height: 8.5vh;
-    }
     @include desktop {
         width: 9.5vh;
         height: 9.5vh;
@@ -68,20 +64,12 @@
     }
 }
 .gmailicon:hover {
-    @include mobile {
-        width: 8.5vh;
-        height: 8.5vh;
-    }
     @include desktop {
         width: 9.5vh;
         height: 9.5vh;
     }
 }
 .githubwrapper {
-    @include mobile {
-        width: 10.5vh;
-        height: 10.5vh;
-    }
     @include desktop {
         width: 12.5vh;
         height: 12.5vh;
@@ -100,20 +88,12 @@
     }
 }
 .githubicon:hover {
-    @include mobile {
-        width: 10.5vh;
-        height: 10.5vh;
-    }
     @include desktop {
         width: 12.5vh;
         height: 12.5vh;
     }
 }
 .linkedinwrapper {
-    @include mobile {
-        width: 7.5vh;
-        height: 7.5vh;
-    }
     @include desktop {
         width: 8.5vh;
         height: 8.5vh;
@@ -132,10 +112,6 @@
     }
 }
 .linkedinIcon:hover {
-    @include mobile {
-        width: 7.5vh;
-        height: 7.5vh;
-    }
     @include desktop {
         width: 8.5vh;
         height: 8.5vh;

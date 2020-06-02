@@ -596,12 +596,12 @@ body {
 }
 
 .navigation-options .navLink {
-  font-size: 1.3vw;
+  font-size: 1.4vw;
 }
 
 .navigation-options .navLink:hover {
   text-decoration: underline;
-  font-size: 1.5vw;
+  font-size: 1.6vw;
   cursor: pointer;
 }
 
@@ -777,11 +777,6 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-}
-
-.jobs-container {
-  margin-top: 15vh;
-  height: 70vh;
 }
 
 .projects-container {
@@ -981,16 +976,24 @@ body {
   height: 400px;
 }
 
-.appear {
-  background-image: none;
-  background-color: black;
-  margin-right: 0;
-  margin-bottom: 0;
-  width: 565px;
-  color: white;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+@media (min-width: 800px) {
+  .appear {
+    background-image: none;
+    background-color: black;
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 565px;
+    color: white;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media (max-width: 800px) {
+  .appear {
+    display: none;
+  }
 }
 
 .appear:hover {

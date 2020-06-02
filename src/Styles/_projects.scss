@@ -144,6 +144,7 @@
 }
 
 .appear {
+    @include desktop {
     background-image: none;
     background-color: black;
     margin-right: 0;
@@ -151,6 +152,10 @@
     width: 565px;
     color: white;
     align-items: flex-start;
+    }
+    @include mobile {
+        display: none;
+    }
 }
 .appear:hover {
     cursor: default;

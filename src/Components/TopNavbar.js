@@ -26,7 +26,7 @@ export default class TopNavbar extends Component {
                             duration= {400}
                         >Projects</Link>
                         <vr/>
-                        <Link 
+                        {/* <Link 
                             className="navLink"
                             activeClass="active"
                             to="jobs"
@@ -35,7 +35,7 @@ export default class TopNavbar extends Component {
                             offset={-105}
                             duration= {400}
                         >Jobs</Link>
-                        <vr/>
+                        <vr/> */}
                         <Link 
                             className="navLink"
                             activeClass="active"

@@ -8,6 +8,7 @@ export default class Projects extends Component {
             {
                 name: "Project Canary",
                 classes: 'project canary',
+                defaultclasses: 'project canary',
                 footerclasses: "",
                 backgroundClass: 'canary',
                 key: 0,
@@ -30,12 +31,14 @@ export default class Projects extends Component {
                         name: "Johann Moreno",
                         link: "https://github.com/Johanson1988"
                     }],
-                    classes: "projectdetails fadeout"
+                    classes: "projectdetails fadeout",
+                    defaultclasses: "projectdetails fadeout",
                 }
             },
             {
                 name: "Petsit",
                 classes: 'project petsit',
+                defaultclasses: 'project petsit',
                 footerclasses: "",
                 backgroundClass: 'petsit',
                 key: 1,
@@ -55,12 +58,14 @@ export default class Projects extends Component {
                         name: "Frederic Vannier",
                         link: "https://frederic-vannier.firebaseapp.com/"
                     }],
-                    classes: "projectdetails fadeout"
+                    classes: "projectdetails fadeout",
+                    defaultclasses: "projectdetails fadeout"
                 }
             },
             {
                 name: "Trampoline Time Forever",
                 classes: 'project trampoline',
+                defaultclasses: 'project trampoline',
                 footerclasses: "",
                 backgroundClass: 'trampoline',
                 key: 2,
@@ -76,7 +81,8 @@ export default class Projects extends Component {
                         name: "Repo",
                         link: "https://github.com/Falconairio/Trampoline-Time-Forever"
                     }],
-                    classes: "projectdetails fadeout"
+                    classes: "projectdetails fadeout",
+                    defaultclasses: "projectdetails fadeout"
                 }
             }
         ],
@@ -88,6 +94,9 @@ export default class Projects extends Component {
     }
 
     selectProject = (project) => {
+        window.addEventListener("resize", () => {
+            this.desktopToMobileUnselect()
+        })
         this.setState({isAnimating: true})
         let projects = this.state.projects;
 
@@ -151,6 +160,9 @@ export default class Projects extends Component {
     }
 
     unselectProject = (project) => {
+        window.removeEventListener("resize", () => {
+            this.desktopToMobileUnselect()
+        })
         this.setState({ isAnimating: true })
         let projects = this.state.projects;
 
@@ -220,14 +232,36 @@ export default class Projects extends Component {
             this.setState({ projects, isAnimating: false, h1class: "h1appear" })
         }, 2200)
         }
+
+    desktopToMobileUnselect = () => {
+        if(!this.state.isMobile && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 800) {
+            let projects = this.state.projects
+            projects.forEach((item) => {
+                    item.classes = item.defaultclasses;
+                    item.info.classes = item.info.defaultclasses;
+                    item.footerclasses = ""
+                    item.isSelected = false
+            })
+            this.setState({ projects, h1class: "h1appear", isMobile: true })
+        } else if(this.state.isMobile && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 800) {
+            this.setState({ projectViewing: null, isViewingTechnologies: true, isMobile: false, modalClasses: "projectsmodal" })
+        }
+    }
+
     unselectModal = () => {
+        window.removeEventListener("resize", () => {
+            this.desktopToMobileUnselect()
+        })
         this.setState({ modalClasses: "projectsmodal fadeoutmodal" })
         setTimeout(() => {
-            this.setState({ projectViewing: null})
+            this.setState({ projectViewing: null, isViewingTechnologies: true })
         }, 500)
     }
 
     renderModal = (project) => {
+        window.addEventListener("resize", () => {
+            this.desktopToMobileUnselect()
+        })
         return (
             <div className = {this.state.modalClasses}>
                 <h1>{project.name}</h1>

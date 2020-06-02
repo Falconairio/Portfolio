@@ -74,7 +74,6 @@ export default class SideNavbar extends Component {
                                 activeClass="active"
                                 to="about"
                                 spy={true}
-                                smooth={true}
                                 offset={-105}
                                 duration= {400}
                             >About</Link>
@@ -85,7 +84,6 @@ export default class SideNavbar extends Component {
                                 activeClass="active"
                                 to="projects"
                                 spy={true}
-                                smooth={true}
                                 offset={-105}
                                 duration= {400}
                             >Projects</Link>
@@ -107,7 +105,6 @@ export default class SideNavbar extends Component {
                                 activeClass="active"
                                 to="contact"
                                 spy={true}
-                                smooth={true}
                                 offset={-105}
                                 duration= {400}
                             >Contact</Link>

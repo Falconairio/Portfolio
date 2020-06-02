@@ -306,6 +306,30 @@ button:focus {
   }
 }
 
+@-webkit-keyframes welcomeMessageSwitch {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes welcomeMessageSwitch {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -403,13 +427,14 @@ body {
           flex-direction: column;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .portfolio-items {
     width: 70vw;
+    margin-left: 35px;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .portfolio-items {
     width: 100vw;
     display: -webkit-box;
@@ -421,7 +446,7 @@ body {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .sidenavbar-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -455,7 +480,7 @@ body {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .sidenavbar-container {
     display: none;
   }
@@ -605,13 +630,13 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .topnav-container {
     display: none;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .topnav-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -643,6 +668,11 @@ body {
 }
 
 .welcome-container {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -664,29 +694,10 @@ body {
 
 .welcome-container h1 {
   margin-bottom: 4vh;
-  -webkit-animation-name: welcometext;
-          animation-name: welcometext;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-  opacity: 1;
 }
 
-.welcome-container h1:hover {
-  -webkit-transition-property: width height;
-  transition-property: width height;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-@media (min-width: 800px) {
-  .welcome-container h1:hover {
-    font-size: 11.2vh;
-  }
+.welcome-container h1:focus {
+  outline: none;
 }
 
 .welcome-container p:first-of-type {
@@ -713,7 +724,30 @@ body {
           animation-fill-mode: backwards;
 }
 
-@media (min-width: 800px) {
+.welcome-container .welcomeInitialAnimate {
+  -webkit-animation-name: welcometext;
+          animation-name: welcometext;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  opacity: 1;
+}
+
+.welcome-container .welcomeAnimate {
+  -webkit-animation-name: welcomeMessageSwitch;
+          animation-name: welcomeMessageSwitch;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@media (min-width: 900px) {
   .welcome-container h1 {
     font-size: 11vh;
   }
@@ -725,7 +759,7 @@ body {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .welcome-container h1 {
     font-size: 15vw;
   }
@@ -796,7 +830,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: hidden;
 }
 
 .projects-container h1 {
@@ -804,27 +837,27 @@ body {
   margin-bottom: 3vh;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .projects-container h1 {
     margin-top: 5vh;
     font-size: 3vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .projects-container h1 {
     font-size: 4vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .scroll {
     overflow-x: auto;
     width: 70vw;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .scroll {
     overflow-y: auto;
     height: 52vh;
@@ -847,13 +880,15 @@ body {
           justify-content: space-evenly;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .projects {
-    width: 80vw;
+    width: 70vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .projects {
     width: 100vw;
     -ms-flex-wrap: wrap;
@@ -889,13 +924,13 @@ body {
   width: 35vh;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .project {
     margin-bottom: 5vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .project {
     margin-bottom: 1vh;
   }
@@ -976,7 +1011,7 @@ body {
   height: 400px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .appear {
     background-image: none;
     background-color: black;
@@ -990,7 +1025,7 @@ body {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .appear {
     display: none;
   }
@@ -1368,25 +1403,25 @@ body {
   font-weight: bold;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .contact-container h1 {
     font-size: 3vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .contact-container h1 {
     font-size: 4vh;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .contact-container a {
     font-size: 2.3vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .contact-container a {
     font-size: 2.7vh;
   }
@@ -1409,7 +1444,7 @@ body {
   margin-left: 1.5vh;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .gmailwrapper {
     width: 9.5vh;
     height: 9.5vh;
@@ -1423,28 +1458,28 @@ body {
   transition-property: width height;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .gmailicon {
     width: 8vh;
     height: 8vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .gmailicon {
     width: 9vh;
     height: 9vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .gmailicon:hover {
     width: 9.5vh;
     height: 9.5vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .githubwrapper {
     width: 12.5vh;
     height: 12.5vh;
@@ -1458,28 +1493,28 @@ body {
   transition-property: width height;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .githubicon {
     width: 10vh;
     height: 10vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .githubicon {
     width: 12vh;
     height: 12vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .githubicon:hover {
     width: 12.5vh;
     height: 12.5vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .linkedinwrapper {
     width: 8.5vh;
     height: 8.5vh;
@@ -1493,21 +1528,21 @@ body {
   transition-property: width height;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .linkedinIcon {
     width: 7vh;
     height: 7vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .linkedinIcon {
     width: 8vh;
     height: 8vh;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .linkedinIcon:hover {
     width: 8.5vh;
     height: 8.5vh;

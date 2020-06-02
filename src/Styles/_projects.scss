@@ -3,7 +3,7 @@
     @include whiteborder;
     @include flexcenterabsolute;
     @include flexcolumn;
-    overflow: hidden;
+    // overflow: hidden;
     // border: 3px solid white;
     h1 {
         font-weight: bolder;
@@ -38,7 +38,8 @@
     @include flexcenterhorizontal;
     justify-content: space-evenly;
     @include desktop {
-        width: 80vw;
+        width: 70vw;
+        flex-wrap: wrap;
     }
     @include mobile {
         width: 100vw;

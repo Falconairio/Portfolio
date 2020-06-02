@@ -1,4 +1,6 @@
 .welcome-container {
+    user-select: none;
+    outline: none;
     @include whiteborder;
     @include flexcenterabsolute;
     @include flexcolumn;
@@ -6,19 +8,9 @@
     text-align: center;
     h1 {
         margin-bottom: 4vh;
-        animation-name: welcometext;
-        animation-duration: 2s;
-        animation-delay: 1s;
-        animation-fill-mode: backwards;
-        opacity: 1;
     }
-    h1:hover {
-        transition-property: width height;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-        @include desktop {
-            font-size: 11.2vh;
-        }
+    h1:focus {
+        outline: none;
     }
     p:first-of-type {
         animation-name: welcometext;
@@ -34,6 +26,22 @@
         animation-delay: 4s;
         animation-fill-mode: backwards;
     }
+
+    .welcomeInitialAnimate {
+        animation-name: welcometext;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-fill-mode: backwards;
+        opacity: 1;
+    }
+
+    .welcomeAnimate {
+        animation-name: welcomeMessageSwitch;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        animation-fill-mode: backwards;
+    }
+
     @include desktop {
         h1 {
             font-size: 11vh;

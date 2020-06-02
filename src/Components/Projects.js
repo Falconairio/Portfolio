@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class Projects extends Component {
     state = {
-        divclass: "scroll",
+        divclass: "",
         h1class: "h1appear",
         projects: [
             {
@@ -87,10 +87,10 @@ export default class Projects extends Component {
             }
         ],
         projectViewing: null,
-        isMobile: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 800,
+        isMobile: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 900,
         isAnimating: false,
         isViewingTechnologies: true,
-        modalClasses: "projectsmodal"
+        modalClasses: "projectsmodal",
     }
 
     selectProject = (project) => {
@@ -184,7 +184,7 @@ export default class Projects extends Component {
                     return projectObj
                 } else return projectObj
             })
-            this.setState({ projects, divclass: "scroll" })},1000)
+            this.setState({ projects, divclass: "" })},1000)
     
         setTimeout(() => {
             projects = projects.map((projectObj) => {
@@ -234,7 +234,7 @@ export default class Projects extends Component {
         }
 
     desktopToMobileUnselect = () => {
-        if(!this.state.isMobile && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 800) {
+        if(!this.state.isMobile && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 900) {
             let projects = this.state.projects
             projects.forEach((item) => {
                     item.classes = item.defaultclasses;
@@ -243,7 +243,7 @@ export default class Projects extends Component {
                     item.isSelected = false
             })
             this.setState({ projects, h1class: "h1appear", isMobile: true })
-        } else if(this.state.isMobile && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 800) {
+        } else if(this.state.isMobile && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 900) {
             this.setState({ projectViewing: null, isViewingTechnologies: true, isMobile: false, modalClasses: "projectsmodal" })
         }
     }
@@ -347,7 +347,7 @@ export default class Projects extends Component {
         return (
             <div id = 'projects' className = 'projects-container'>
                 <h1 className = {this.state.h1class}>Projects</h1>
-                <div className = {this.state.divclass}>
+                {/* <div className = {this.state.divclass}> */}
                 <div className = "projects">
                     {this.state.projects.map((project) => {
                         return(
@@ -407,7 +407,7 @@ export default class Projects extends Component {
                             </div>)
                     })}
                 </div>
-                </div>
+                {/* </div> */}
                     {this.state.projectViewing ? this.renderModal(this.state.projectViewing) : null}
             </div>
         )

@@ -5,6 +5,7 @@
     // margin-left: 1.5vw;
     @include desktop {
         width: 70vw;
+        margin-left: 35px;
     }
     @include mobile {
         width: 100vw;

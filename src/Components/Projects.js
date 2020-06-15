@@ -29,7 +29,7 @@ export default class Projects extends Component {
                     }],
                     collaborators: [{
                         name: "Johann Moreno",
-                        link: "https://github.com/Johanson1988"
+                        link: "https://web-portfolio-johann-moreno.herokuapp.com/"
                     }],
                     classes: "projectdetails fadeout",
                     defaultclasses: "projectdetails fadeout",

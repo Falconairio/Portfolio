@@ -1,25 +1,18 @@
 .about-container {
     @include portfolioitemspacing;
-    @include whiteborder;
-    section {
-        @include flexcolumn;
-        margin-left: 3vw;
-        margin-right: 3vw;
-        margin-top: 3vh;
-    }
-    h1 {
-        font-size: 2vw;
-        text-decoration: underline;
-        margin-bottom: 5vh;
-    }
-    element {
-        font-size: 20px;
-        margin-left: 1vw;
-        margin-right: 1vw;
+    @include flexcenterabsolute;
+    @include desktop {
+        width: 70vw;
+        border-radius: 15px;
     }
 }
-.skills-container {
-    @include flexrow;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+
+.about {
+    @include flexcenterabsolute;
+    @include desktop {
+        border: 1px solid white;
+        border-radius: 15px;
+        width: 650px;
+        height: 400px;
+    }
 }

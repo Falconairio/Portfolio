@@ -44,7 +44,7 @@
 
     @include desktop {
         h1 {
-            font-size: 11vh;
+            font-size: 13vh;
         }
         p:first-of-type {
             font-size: 5vh;
@@ -55,7 +55,7 @@
     }
     @include mobile {
         h1 {
-            font-size: 15vw;
+            font-size: 10vw;
         }
         p:first-of-type {
             font-size: 5vw;

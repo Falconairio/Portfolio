@@ -12,11 +12,17 @@
         height: 5vh;
         background-color: rgba(0,0,0,1);
         font-weight: bolder;
-        top: -1px;
         position: fixed;
         vr {
             height: 5vh;
             border: 1px solid white
         }
+        transition: top 0.3s
     }
+}
+.nav-regular-position {
+    top: -1px;
+}
+.nav-hidden-position {
+    top: -50px;
 }

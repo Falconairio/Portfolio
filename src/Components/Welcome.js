@@ -27,6 +27,8 @@ export default class Welcome extends Component {
                     let greetings = this.state.greetings.filter((greeting,index) => {
                         if(index !== randomNum) {
                             return greeting
+                        } else {
+                            return null
                         }
                     }).concat(this.state.greetingUsed)
                     setTimeout(() => {

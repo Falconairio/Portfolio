@@ -24,20 +24,22 @@ export default class TopNavbar extends Component {
 
     setNavbarSettings = () => {
         var currentScrollPos = window.pageYOffset;
-        if (this.state.scrollPos > currentScrollPos) {     
-          this.setState({ scrollPos: currentScrollPos })
-          if(currentScrollPos === 0) {
+        if(currentScrollPos < 20) {
             this.setState({ navbarPos: -1 })
-          } else if(this.state.navbarPos < -1) {
-            let newPos = this.state.navbarPos + 3;
-            this.setState({ navbarPos: newPos })
-        }
         } else {
-          this.setState({ scrollPos: currentScrollPos })
-          if(this.state.navbarPos > -51) {
-              let newPos = this.state.navbarPos - 3;
-              this.setState({ navbarPos: newPos })
-          }
+            if (this.state.scrollPos > currentScrollPos) {     
+            this.setState({ scrollPos: currentScrollPos })
+            if (this.state.navbarPos < -1) {
+                let newPos = this.state.navbarPos + 3;
+                this.setState({ navbarPos: newPos })
+                }
+            } else {
+            this.setState({ scrollPos: currentScrollPos })
+            if(this.state.navbarPos > -51) {
+                let newPos = this.state.navbarPos - 3;
+                this.setState({ navbarPos: newPos })
+            }
+            }
         }
     }
 

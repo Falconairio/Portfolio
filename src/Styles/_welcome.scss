@@ -4,7 +4,8 @@
     @include whiteborder;
     @include flexcenterabsolute;
     @include flexcolumn;
-    @include portfolioitemspacing;
+    height: 70vh;
+    margin-top: 15vh;
     text-align: center;
     h1 {
         margin-bottom: 4vh;

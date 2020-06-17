@@ -697,8 +697,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 15vh;
   height: 70vh;
+  margin-top: 15vh;
   text-align: center;
 }
 
@@ -779,8 +779,6 @@ body {
 }
 
 .about-container {
-  margin-top: 15vh;
-  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -790,6 +788,20 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-container {
+    margin-top: 15vh;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    margin-top: 30vh;
+    height: 70vh;
+  }
 }
 
 @media (min-width: 900px) {
@@ -809,20 +821,51 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
 }
 
 @media (min-width: 900px) {
   .about {
-    border: 1px solid white;
-    border-radius: 15px;
-    width: 650px;
+    width: 600px;
     height: 400px;
+  }
+  .about h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+  }
+  .about p {
+    width: 500px;
+    line-height: 30px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about {
+    width: 300px;
+  }
+  .about h1 {
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+  }
+  .about p {
+    width: 250px;
+    line-height: 25px;
+    margin-bottom: 10px;
   }
 }
 
 .projects-container {
-  margin-top: 15vh;
-  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -837,6 +880,20 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .projects-container {
+    margin-top: 15vh;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-container {
+    margin-top: 30vh;
+    height: 70vh;
+  }
 }
 
 .projects-container h1 {
@@ -1360,8 +1417,6 @@ body {
 }
 
 .contact-container {
-  margin-top: 15vh;
-  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1380,6 +1435,20 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin-bottom: 15vh;
+}
+
+@media (min-width: 900px) {
+  .contact-container {
+    margin-top: 15vh;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    margin-top: 30vh;
+    height: 70vh;
+  }
 }
 
 .contact-container img:hover {

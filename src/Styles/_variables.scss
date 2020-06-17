@@ -36,8 +36,14 @@ $portfolioitemheight: 70vw;
 }
 
 @mixin portfolioitemspacing {
-    margin-top: 15vh;
-    height: 70vh;
+    @include desktop {
+        margin-top: 15vh;
+        height: 70vh;
+    }
+    @include mobile {
+        margin-top: 30vh;
+        height: 70vh;
+    }
 };
 
 @mixin mobile {

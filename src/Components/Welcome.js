@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class Welcome extends Component {
     state = {
-        greetings: ['Bienvenido','Benvinguda','Willkommen','Welkom','Croeso','Velkommen','Bienvenue','Benvenuto','Ongietorri','Fáilte','Witamy','Vítejte'],
+        greetings: ['Bienvenido','Benvinguda','Willkommen','Welkom','Croeso','Velkommen','Bienvenue','Benvenuto','Ongietorri','Fáilte','Witamy','Vítejte','ようこそ'],
         h1classes: "welcomeInitialAnimate",
         greetingUsed: 'Welcome',
         isAnimating: false
@@ -47,7 +47,7 @@ export default class Welcome extends Component {
             <div className = 'welcome-container'>
                 <h1 className = {this.state.h1classes}>{this.state.greetingUsed}</h1>
                 <p>You've come upon my portfolio page</p>
-                <p>(currently a work in progress!)</p>
+                {/* <p>(currently a work in progress!)</p> */}
             </div>
         )
     }

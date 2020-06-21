@@ -55,18 +55,24 @@ export default class Contact extends Component {
         return (
             <div id = 'contact' className = 'contact-container'>
                 <h1>Contact</h1>
-                <div className = 'gmailwrapper'>
-                    <img src = './images/GmailLogo.png' alt = '' className = 'gmailicon' onClick ={this.setEmailHidden} />
+                <div>
+                    <div className = 'gmailwrapper'>
+                        <img src = './images/GmailLogo.png' alt = '' className = 'gmailicon' onClick ={this.setEmailHidden} />
+                    </div>
                     <a href = 'mailto:griffterrycode@gmail.com' className = {classesEmail}>griffterrycode@gmail.com</a>
                 </div>
-                <div className = 'githubwrapper'>
+                <div>
                     <a href = 'https://github.com/Falconairio' className = {classesGithub}>github.com/Falconairio</a>
-                    <img src = './images/GithubIcon.png' alt = '' className = 'githubicon' onClick ={this.setGithubHidden} />
+                    <div className = 'githubwrapper'>
+                        <img src = './images/GithubIcon.png' alt = '' className = 'githubicon' onClick ={this.setGithubHidden} />
+                    </div>
                 </div>
-                <div className = 'linkedinwrapper'>
-                    <img src = './images/linkedinIcon.png' alt = '' className = 'linkedinIcon' onClick ={this.setLinkedinHidden} />
+                <div>
+                    <div className = 'linkedinwrapper'>
+                        <img src = './images/linkedinIcon.png' alt = '' className = 'linkedinIcon' onClick ={this.setLinkedinHidden} />
+                    </div>
                     <a href = 'https://www.linkedin.com/in/griffithterry/' className = {classesLinkedin}>linkedin.com/in/griffithterry/</a>
-                </div>
+                 </div>
             </div>
         )
     }

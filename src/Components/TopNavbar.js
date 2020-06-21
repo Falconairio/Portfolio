@@ -35,7 +35,7 @@ export default class TopNavbar extends Component {
                 }
             } else {
             this.setState({ scrollPos: currentScrollPos })
-            if(this.state.navbarPos > -51) {
+            if(this.state.navbarPos > -64) {
                 let newPos = this.state.navbarPos - 3;
                 this.setState({ navbarPos: newPos })
             }

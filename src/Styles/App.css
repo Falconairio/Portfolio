@@ -576,6 +576,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -583,12 +584,14 @@ body {
 }
 
 .name-title h1 {
-  font-size: 2vw;
+  width: 150px;
+  font-size: 23px;
 }
 
 .name-title p {
-  font-size: 1.2vw;
-  margin-top: 1vh;
+  width: 170px;
+  font-size: 13px;
+  margin-top: 6px;
 }
 
 .name-title hr {
@@ -600,7 +603,7 @@ body {
 }
 
 .linkcontainer {
-  height: 1.5vw;
+  height: 19.5px;
 }
 
 .navigation-options ul {
@@ -622,12 +625,12 @@ body {
 }
 
 .navigation-options .navLink {
-  font-size: 1.4vw;
+  font-size: 18px;
 }
 
 .navigation-options .navLink:hover {
   text-decoration: underline;
-  font-size: 1.6vw;
+  font-size: 19.5px;
   cursor: pointer;
 }
 
@@ -788,6 +791,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 @media (min-width: 900px) {
@@ -966,6 +971,7 @@ body {
   border-radius: 10px;
   height: 20vh;
   width: 35vh;
+  font-size: 2vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

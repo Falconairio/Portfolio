@@ -77,14 +77,17 @@
 .name-title {
     @include flexcolumn;
     @include flexcentervertical;
+    text-align: center;
     justify-content: space-between;
     margin: 2vh 0 2vh 0;
     h1 {
-        font-size: 2vw;
+        width: 150px;
+        font-size: 23px;
     }
     p {
-        font-size: 1.2vw;
-        margin-top: 1vh;
+        width: 170px;
+        font-size: 13px;
+        margin-top: 6px;
     }
     hr {
         width: 12.5vw;
@@ -98,7 +101,7 @@
 }
 
 .linkcontainer {
-    height: 1.5vw;
+    height: 19.5px;
 }
 
 .navigation-options {
@@ -109,11 +112,11 @@
         height: 25vh;
     }
     .navLink {
-        font-size: 1.4vw;
+        font-size: 18px;
     }
     .navLink:hover {
         text-decoration: underline;
-        font-size: 1.6vw;
+        font-size: 19.5px;
         cursor: pointer;
     }
 }
